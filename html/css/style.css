@@ -115,6 +115,7 @@ hr {
 
 .div11 {
     display: inline-block;
+    max-width: 350px;
 }
 
 input[type=text], select {
