@@ -161,7 +161,7 @@ input[type=submit]:hover {
     display: flex;
     flex-direction: column;
     background-color: rgba(221, 235, 247, 0.699);
-    }
+}
 
 .div12 {
     display: flex;
