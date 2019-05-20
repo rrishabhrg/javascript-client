@@ -1,5 +1,5 @@
 body {
-    padding: 10px;
+    padding: 10px 60px 0px;
 }
 
 .co {
@@ -14,18 +14,6 @@ body {
     border: 1px solid rgb(139, 132, 132);
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-/* @media only screen and (min-width: 992px) {
-    .co {
-        margin: 0px 100px 0px 100px;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .co {
-        margin: 0px 20px 0px 20px;
-    }
-} */
 
 .co-top {
     display: flex;
@@ -85,42 +73,55 @@ hr {
     flex-direction: column;
 }
 
-.co-wallet {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .co-wallet-w {
     padding-left: 20px;
 }
 
+.co-wallet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+}
+
 .co-wallet_discover {
     display: flex;
-    flex: 1;
-    justify-content: center;
-    padding: 10px 0px 10px 0px;
+    flex: 2;
+    flex-direction: column;
 }
 
 .co-wallet_master {
     display: flex;
-    flex: 1;
-    justify-content: center;
+    flex: 2;
+    flex-direction: column;
 }
 
 .co-wallet_visa {
     display: flex;
-    flex: 1;
+    flex: 2;
+    flex-direction: column;
+}
+
+.image {
+    display: flex;
     justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-top: 2px;
 }
 
 .co-card {
     text-align: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .co-card-nc {
-    margin-right: 100%;
+    display: flex;
+    justify-content: flex-start;
     margin-top: 17px;
     padding-left: 20px;
 }
@@ -128,6 +129,7 @@ hr {
 .div11 {
     display: inline-block;
     max-width: 350px;
+    padding-top: 25px;
 }
 
 input[type=text], select {
@@ -158,6 +160,7 @@ input[type=submit]:hover {
 .co-sidebar {
     display: flex;
     flex-direction: column;
+    background-color: rgba(221, 235, 247, 0.699);
 }
 
 .div12 {
@@ -177,13 +180,14 @@ input[type=submit]:hover {
 
 .div12_2 {
     display: flex;
-    flex: 8;
+    flex: 7;
     padding-left: 10px; 
 }
 
 .div12_3 {
     display: flex;
-    flex: 1;
+    flex: 2;
+    justify-content: flex-end;
     padding-right: 5px;
 }
 
@@ -199,13 +203,14 @@ input[type=submit]:hover {
 
 .div13_2 {
     display: flex;
-    flex: 8;
+    flex: 7;
     padding-left: 10px;
 }
 
 .div13_3 {
     display: flex;
-    flex: 1;
+    flex: 2;
+    justify-content: flex-end;
     padding-right: 5px;
 }
 
@@ -221,13 +226,14 @@ input[type=submit]:hover {
 
 .div14_2 {
     display: flex;
-    flex: 8;
+    flex: 7;
     padding-left: 10px;
 }
 
 .div14_3 {
     display: flex;
-    flex: 1;
+    flex: 2;
+    justify-content: flex-end;
     padding-right: 5px;
 }
 
@@ -252,6 +258,7 @@ input[type=submit]:hover {
 .div15_3 {
     display: flex;
     flex: 1;
+    justify-content: flex-end;
     padding-right: 5px;
 }
 
@@ -261,16 +268,113 @@ input[type=submit]:hover {
     flex-direction: column;
 }
 
+.total {
+    display: flex;
+    flex-direction: row;
+}
+
+.total_1_1 {
+    display: flex;
+    flex: 2;
+}
+
+.total_1_2 {
+    display: flex;
+    flex: 8;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
 .div17 {
     padding-top: 5px;
     display: flex;
     flex-direction: row;
 }
 
-.div17_2 {
-    margin-left: 360px;
+.div17_1 {
+    display: flex;
+    flex: 2;
 }
 
-span {
-    margin-left: 330px;
+.div17_2 {
+    display: flex;
+    flex: 8;
+    padding-right: 5px;
+    justify-content: flex-end;
+}
+
+            /* Media Queries */
+
+@media only screen and (min-width: 992px) {
+    .co {
+        margin: 0px 100px 0px;
+    }
+
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        background-color: rgba(221, 235, 247, 0.699);
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .co {
+        margin: 0px 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: rgba(221, 235, 247, 0.699);
+    }    
+}
+
+@media only screen and (max-width: 599px) {
+    .co-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(221, 235, 247, 0.699);
+        order: 1;
+    }
+    
+}
+
+@media only screen and (max-width: 399px) {
+    .co-wallet {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 767px) { 
+    .breadcrumb { 
+        display: none; 
+    } 
 }

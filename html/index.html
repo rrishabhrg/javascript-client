@@ -4,7 +4,7 @@
         <title>Intro to HTML, CSS</title>
         <link rel="stylesheet" href="./css/style.css">
     </head>
-    <body background='./images/background.jpg'>
+    <body background='./background.jpg'>
         <div class="co">
             <div class="co-top">
                 <div id="co-top_div1"><strong>Checkout</strong></div>
@@ -21,18 +21,27 @@
                 <div class="div4">                 <!-- div4 -->
                     <div class="co-wallet-w">Wallet</div><hr />
                     <div class="co-wallet">        <!-- div6 -->
-                        <div class="co-wallet_discover"><img src="./images/cards/discover.png" width="80%" height="80%" ALIGN="bottom" /></div> <!-- div8 for discover network card -->
-                        <div class="co-wallet_master"><img src="./images/cards/mastercard.png" width="80%" height="80%"></div> <!-- div9 for master card -->
-                        <div class="co-wallet_visa"><img src="./images/cards/visa.png" width="80%" height="80%"></div>         <!-- div10 for visa card -->
+                        <div class="co-wallet_discover"> <!-- div8 for discover network card -->
+                            <div class="image"><img src="./images/cards/discover.png" width="80%" height="80%" /></div>
+                            <div class="text">Ending with 8899</div>
+                        </div> 
+                        <div class="co-wallet_master">  <!-- div9 for master card -->
+                            <div class="image"><img src="./images/cards/mastercard.png" width="80%" height="80%" /></div>
+                            <div class="text">Ending with 8899</div>
+                        </div>
+                        <div class="co-wallet_visa">          <!-- div10 for visa card -->
+                            <div class="image"><img src="./images/cards/visa.png" width="80%" height="80%" /></div>
+                            <div class="text">Ending with 8899</div>
+                        </div>
                     </div>
                     <div class="co-card">          <!-- div7 -->
                         <div class="co-card-nc">New&nbspCard</div><hr />
                         <div class="div11">        <!-- div11 for form -->
                             <form >
-                                <input type="text" placeholder="Name on Card" ><br>
-                                <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" /><br>
-                                <input type="text" placeholder="MM/YY" />
-                                <input type="text" placeholder="CVV" /><br><br>
+                                <input type="text" placeholder="Name on Card" >
+                                <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" />
+                                <input type="text" placeholder="MM/YY" width="50%" />
+                                <input type="text" placeholder="CVV" width="50%" /><br><br>
                                 <input type="submit" value="CONTINUE">
                             </form>
                         </div>
@@ -84,9 +93,15 @@
                         </div>
                     </div><hr />
                     <div class="div16">           <!-- div16 -->
-                        <div>Sub Total<span>$ 100.00</span></div>
-                        <div>Shipping&nbsp<span>$ 10.00</span></div>
-                        <div>Taxes&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>$ 5.00</span></div>
+                        <div class="total">
+                            <div class="total_1_1">Sub Total</div><div class="total_1_2">$ 100.00</div>
+                        </div>
+                        <div class="total">
+                            <div class="total_1_1">Shipping</div><div class="total_1_2">$ 10.00</div>
+                        </div>
+                        <div class="total">
+                            <div class="total_1_1">Taxes</div><div class="total_1_2">$ 5.00</div>
+                        </div>
                     </div><hr />
                     <div class="div17">           <!-- div17 -->
                         <div class="div17_1">Total</div>
