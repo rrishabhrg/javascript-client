@@ -363,7 +363,6 @@ input[type=submit]:hover {
         background-color: rgba(221, 235, 247, 0.699);
         order: 1;
     }
-    
 }
 
 @media only screen and (max-width: 399px) {
