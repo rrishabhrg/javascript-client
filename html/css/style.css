@@ -1,9 +1,14 @@
+body {
+    padding: 10px 60px 0px;
+}
+
 .co {
     height: auto;
     width: auto;
     margin: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(139, 132, 132);
@@ -15,7 +20,6 @@
     flex-direction: row;
     align-items: baseline;
 }
-
 
 #co-top_div1 {
     display: flex;
@@ -35,40 +39,21 @@
     padding-right: 10px;
 }
 
-ul.breadcrumb {
+ul.breadcrum {
     padding: 0px 0px;
     margin: 0px 0px;
     list-style: none;
 }
 
-ul.breadcrumb li {
+ul.breadcrum li {
     display: inline;
     font-size: 16px;
 }
 
-ul.breadcrumb li+li:before {
+ul.breadcrum li+li:before {
     padding: 4px;
     color: black;
     content: "/\00a0";
-}
-
-.co-middle {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-}
-
-#co-middle_div1 {
-    display: flex;
-    flex: 6;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-#co-middle_div2 {
-    display: flex;
-    flex: 4;
-    justify-content: flex-start;
 }
 
 hr {
@@ -78,7 +63,242 @@ hr {
     background: rgb(104, 97, 97);
 }
 
-b {
-    opacity: .7;
+.co-body {
+    display: flex;
+    flex-direction: row;
 }
 
+.div4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.co-wallet-w {
+    padding-left: 20px;
+}
+
+.co-wallet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.co-wallet_discover {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.co-wallet_master {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.co-wallet_visa {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-top: 2px;
+}
+
+.co-card {
+    text-align: center;
+    flex-direction: column;
+}
+
+.co-card-nc {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 17px;
+    padding-left: 20px;
+}
+
+.div11 {
+    display: inline-block;
+    max-width: 350px;
+    padding-top: 25px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 3px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.co-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(221, 235, 247, 0.699);
+}
+
+.div12 {
+    display: flex;
+    flex-direction: row;
+}
+
+.div12_1 {
+    display: flex;
+    flex: 1;
+}
+
+.bdr-groove {
+    border-style: groove;
+    border: 3px solid #1b3f1d70;
+}
+
+.div12_2 {
+    display: flex;
+    flex: 7;
+    padding-left: 10px; 
+}
+
+.div12_3 {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.div13 {
+    display: flex;
+    flex-direction: row;
+}
+
+.div13_1 {
+    display: flex;
+    flex: 1;
+}
+
+.div13_2 {
+    display: flex;
+    flex: 7;
+    padding-left: 10px;
+}
+
+.div13_3 {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.div14 {
+    display: flex;
+    flex-direction: row;
+}
+
+.div14_1 {
+    display: flex;
+    flex: 1;
+}
+
+.div14_2 {
+    display: flex;
+    flex: 7;
+    padding-left: 10px;
+}
+
+.div14_3 {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.div15 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+}
+
+.div15_1 {
+    display: flex;
+    flex: 1;
+}
+
+.div15_2 {
+    display: flex;
+    flex: 8;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.div15_3 {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.div16 {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+}
+
+.total_1_1 {
+    display: flex;
+    flex: 2;
+}
+
+.total_1_2 {
+    display: flex;
+    flex: 8;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+.div17 {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.div17_1 {
+    display: flex;
+    flex: 2;
+}
+
+.div17_2 {
+    display: flex;
+    flex: 8;
+    padding-right: 5px;
+    justify-content: flex-end;
+}
