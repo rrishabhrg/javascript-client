@@ -39,18 +39,18 @@ body {
     padding-right: 10px;
 }
 
-ul.breadcrum {
+ul.breadcrumb {
     padding: 0px 0px;
     margin: 0px 0px;
     list-style: none;
 }
 
-ul.breadcrum li {
+ul.breadcrumb li {
     display: inline;
     font-size: 16px;
 }
 
-ul.breadcrum li+li:before {
+ul.breadcrumb li+li:before {
     padding: 4px;
     color: black;
     content: "/\00a0";
@@ -301,4 +301,79 @@ input[type=submit]:hover {
     flex: 8;
     padding-right: 5px;
     justify-content: flex-end;
+}
+
+            /* Media Queries */
+
+@media only screen and (min-width: 992px) {
+    .co {
+        margin: 0px 100px 0px;
+    }
+
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        background-color: rgba(221, 235, 247, 0.699);
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .co {
+        margin: 0px 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: rgba(221, 235, 247, 0.699);
+    }    
+}
+
+@media only screen and (max-width: 599px) {
+    .co-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div4 {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+
+    .co-sidebar {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(221, 235, 247, 0.699);
+        order: 1;
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    .co-wallet {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 767px) { 
+    .breadcrumb { 
+        display: none; 
+    } 
 }
