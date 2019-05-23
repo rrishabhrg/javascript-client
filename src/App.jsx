@@ -1,10 +1,20 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { TextFieldDemo } from './pages';
+import { TextFieldDemo, SliderDemo } from './pages';
 
-const App = () => (
-  <div id="root">
-    <TextFieldDemo />
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <div id="root">
+          <SliderDemo />
+        </div>
+        <div id="root">
+          <TextFieldDemo />
+        </div>
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;
