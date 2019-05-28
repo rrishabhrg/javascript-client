@@ -1,11 +1,11 @@
 import React from 'react';
-import { TextField } from '../../components';
+import { TextField } from '../../components/TextField';
 
 const TextFieldDemo = () => (
   <React.Fragment>
     <div>
       <p><b>This is a Disabled Input</b></p>
-      <TextField name="disable" placeholder="Disabled Input" disabled="true" />
+      <TextField name="disable" disabled="true" placeholder="Disabled Input" />
     </div>
 
     <div>
@@ -15,10 +15,9 @@ const TextFieldDemo = () => (
 
     <div>
       <p><b>An Input with errors</b></p>
-      <TextField name="error" placeholder="101" isError="true" />
+      <TextField name="error" isError="true" placeholder="101" />
       <p>Could not be greater than</p>
     </div>
   </React.Fragment>
 );
-
 export default TextFieldDemo;
