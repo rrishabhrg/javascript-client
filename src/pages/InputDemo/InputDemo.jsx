@@ -25,6 +25,8 @@ class InputDemo extends React.Component {
 
   handleSportChange = (event) => {
     this.setState({
+      cricket: '',
+      football: '',
       sport: event.target.value,
     });
   }
@@ -38,7 +40,7 @@ class InputDemo extends React.Component {
 
   render() {
     console.log('state', this.state);
-    const { sport } = this.state;
+    const { sport, value } = this.state;
     return (
       <React.Fragment>
         <div>
@@ -50,18 +52,18 @@ class InputDemo extends React.Component {
           <SelectField options={OPTIONS} onChange={this.handleSportChange} />
         </div>
         {
-          sport === 'Cricket' && (
+          sport === 'cricket' && (
             <div>
               <p><b>What you do?</b></p>
-              <RadioGroup options={CRIC} name="Cricket" value={this.state.value} onChange={this.handleRoleChange} />
+              <RadioGroup options={CRIC} name="Cricket" value={value} onChange={this.handleRoleChange} />
             </div>
           )
         }
         {
-          sport === 'Football' && (
+          sport === 'football' && (
             <div>
               <p><b>What you do?</b></p>
-              <RadioGroup options={FOOT} name="Football" value={this.state.value} onChange={this.handleRoleChange} />
+              <RadioGroup options={FOOT} name="Football" value={value} onChange={this.handleRoleChange} />
             </div>
           )
         }

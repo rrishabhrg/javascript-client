@@ -11,7 +11,7 @@ class RadioGroup extends React.Component {
     }
     const radioOptions = options.map(input => (
       <label>
-        <input type="radio" name={name} key={input.value} onChange={onChange} />
+        <input type="radio" name={name} key={input.value} onChange={onChange} value={input.value} />
         {input.label}
         <br />
       </label>

@@ -2,8 +2,8 @@ export const PUBLIC_IMAGE_FOLDER = '/images/';
 export const DEFAULT_BANNER_IMAGE = 'banners/default.png';
 export const OPTIONS = [
   'Select',
-  'Cricket',
-  'Football',
+  'cricket',
+  'football',
 ];
 export const CRIC = [
   { label: 'Wicket Keeper', value: 'wk' },
