@@ -3,7 +3,7 @@ import React from 'react';
 import style from './style';
 
 const TextField = (props) => {
-  const { disabled, placeholder, isError } = props;
+  const { isError, onChange } = props;
   const { error } = style;
   let { common } = style;
   if (isError) {
@@ -12,8 +12,9 @@ const TextField = (props) => {
       ...error,
     };
   }
+
   return (
-    <input type="text" placeholder={placeholder} disabled={disabled} style={{ ...common }} />
+    <input type="text" style={{ ...common }} error={error} onChange={onChange} />
   );
 };
 

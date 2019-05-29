@@ -181,7 +181,7 @@ input[type=submit]:hover {
 .div12_2 {
     display: flex;
     flex: 7;
-    padding-left: 10px; 
+    padding-left: 10px;
 }
 
 .div12_3 {
@@ -342,7 +342,7 @@ input[type=submit]:hover {
         flex-direction: column;
         flex: 1;
         background-color: rgba(221, 235, 247, 0.699);
-    }    
+    }
 }
 
 @media only screen and (max-width: 599px) {
@@ -372,8 +372,8 @@ input[type=submit]:hover {
     }
 }
 
-@media only screen and (max-width: 767px) { 
-    .breadcrumb { 
-        display: none; 
-    } 
+@media only screen and (max-width: 767px) {
+    .breadcrumb {
+        display: none;
+    }
 }

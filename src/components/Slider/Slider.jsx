@@ -47,7 +47,6 @@ class Slider extends React.Component {
     }
   }
 
-
   render() {
     const { altText, height } = this.props;
     const { index } = this.state;
