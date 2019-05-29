@@ -1,10 +1,15 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable no-return-assign */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { TextField, SelectField, RadioGroup } from '../../components';
-import { OPTIONS, CRIC, FOOT } from '../../configs';
+import {
+  TextField, SelectField, RadioGroup, Button,
+} from '../../components';
+import {
+  OPTIONS, CRIC, FOOT, BTN_TYPE,
+} from '../../configs';
 
 class InputDemo extends React.Component {
   constructor(props) {
@@ -17,17 +22,39 @@ class InputDemo extends React.Component {
     };
   }
 
+  // getInitialState() {
+  //   return {
+  //     name: '',
+  //     sport: '',
+  //     cricket: '',
+  //     football: '',
+  //     nameValid: false,
+  //     sportValid: false,
+  //     cricketValid: false,
+  //     footballValid: false,
+  //     submitDisabled: true,
+  //   };
+  // }
+
   handleNameChange = (event) => {
+    // const nameValid = event.target.value ? true : false;
+    // const submitValid = this.state.sportValid && nameValid;
     this.setState({
       name: event.target.value,
+      // nameValid: nameValid,
+      // submitDisabled: !submitValid,
     });
   }
 
   handleSportChange = (event) => {
+    // const sportValid = event.target.value ? true : false;
+    // const submitValid = this.state.nameValid && sportValid;
     this.setState({
       cricket: '',
       football: '',
       sport: event.target.value,
+      // sportValid: sportValid,
+      // submitDisabled: !submitValid,
     });
   }
 
@@ -36,6 +63,43 @@ class InputDemo extends React.Component {
     this.setState({
       [sport]: event.target.value,
     });
+  }
+
+  // handleBtnClick = (event) => {
+  //   this.setState({
+  //     cancel: event.target.value,
+  //     submit: event.target.value,
+  //   });
+  // }
+
+  // validate = ({ TextField, SelectField, RadioGroup }) => {
+  //   return {
+  //     TextField: !TextField || TextField.trim().length === 0
+  //       ? 'Name is required field'
+  //       : false,
+  //     SelectField: !SelectField || SelectField.trim().length === 0
+  //       ? 'Sport is required field'
+  //       : false,
+  //     RadioGroup: !RadioGroup || RadioGroup.trim().length === 0
+  //       ? 'Role is required field'
+  //       : false,
+  //   };
+  // };
+
+  hasErrors = () => {
+
+  }
+
+  isTouched = () => {
+
+  }
+
+  getError = () => {
+
+  }
+
+  handleBtnClick() {
+    this.alert('I am an alert');
   }
 
   render() {
@@ -67,6 +131,9 @@ class InputDemo extends React.Component {
             </div>
           )
         }
+        <div>
+          <Button value={BTN_TYPE} disabled onClick={this.handleBtnClick} />
+        </div>
       </React.Fragment>
     );
   }

@@ -4,6 +4,7 @@ import {
   OPTIONS,
   CRIC,
   FOOT,
+  BTN_TYPE,
 } from './constants';
 
 export {
@@ -12,4 +13,5 @@ export {
   OPTIONS,
   CRIC,
   FOOT,
+  BTN_TYPE,
 };
