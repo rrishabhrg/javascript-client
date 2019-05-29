@@ -9,4 +9,9 @@ const style = {
   },
 };
 
+export const btn = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+};
+
 export default style;

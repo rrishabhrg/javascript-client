@@ -10,6 +10,7 @@ import {
 import {
   OPTIONS, CRIC, FOOT, BTN_TYPE,
 } from '../../configs';
+import { btn } from '../../components/Button';
 
 class InputDemo extends React.Component {
   constructor(props) {
@@ -21,20 +22,6 @@ class InputDemo extends React.Component {
       football: '',
     };
   }
-
-  // getInitialState() {
-  //   return {
-  //     name: '',
-  //     sport: '',
-  //     cricket: '',
-  //     football: '',
-  //     nameValid: false,
-  //     sportValid: false,
-  //     cricketValid: false,
-  //     footballValid: false,
-  //     submitDisabled: true,
-  //   };
-  // }
 
   handleNameChange = (event) => {
     // const nameValid = event.target.value ? true : false;
@@ -131,7 +118,7 @@ class InputDemo extends React.Component {
             </div>
           )
         }
-        <div>
+        <div style={btn}>
           <Button value={BTN_TYPE} disabled onClick={this.handleBtnClick} />
         </div>
       </React.Fragment>
