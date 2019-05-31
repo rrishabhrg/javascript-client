@@ -3,7 +3,7 @@ const style = {
     width: '100%',
     height: '35px',
   },
-  error: {
+  errorStyle: {
     borderColor: 'red',
   },
 };

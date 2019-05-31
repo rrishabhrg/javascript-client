@@ -5,13 +5,15 @@ import React from 'react';
 
 class RadioGroup extends React.Component {
   render() {
-    const { onChange, options, name } = this.props;
+    const {
+      onChange, options, name, onBlur, error,
+    } = this.props;
     if (!options) {
       return null;
     }
     const radioOptions = options.map(input => (
       <label htmlFor="id">
-        <input type="radio" name={name} key={input.value} onChange={onChange} value={input.value} />
+        <input type="radio" name={name} key={input.value} onChange={onChange} value={input.value} onBlur={onBlur} />
         {input.label}
         <br />
       </label>
@@ -19,6 +21,7 @@ class RadioGroup extends React.Component {
     return (
       <React.Fragment>
         {radioOptions}
+        <p style={{ color: 'red' }}>{ error }</p>
       </React.Fragment>
     );
   }

@@ -15,3 +15,7 @@ export const FOOT = [
   { label: 'Defender', value: 'defender' },
   { label: 'Striker', value: 'striker' },
 ];
+export const BTN_TYPE = [
+  { label: 'Cancel', value: 'cancel' },
+  { label: 'Submit', value: 'submit' },
+];
