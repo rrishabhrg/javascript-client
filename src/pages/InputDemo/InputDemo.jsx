@@ -4,7 +4,6 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-
 import * as style from '../../components/Button/style';
 import {
   TextField, SelectField, RadioGroup, Button,
