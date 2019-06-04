@@ -1,25 +1,36 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 // import { InputDemo } from './pages';
-import { ThemeProvider } from '@material-ui/styles';
-import { ChildrenDemo } from './pages/ChildrenDemo';
+// import { ChildrenDemo } from './pages';
+import { Trainee } from './pages';
 import theme from './theme';
 
 class App extends React.Component {
   render() {
     return (
+      // DAY-7
       // <React.Fragment>
       //   <div id="root">
       //     <InputDemo />
       //   </div>
       // </React.Fragment>
-      <ThemeProvider theme={theme}>
+      // DAY-8
+      // <MuiThemeProvider theme={theme}>
+      //   <React.Fragment>
+      //     <div id="root">
+      //       <ChildrenDemo />
+      //     </div>
+      //   </React.Fragment>
+      // </MuiThemeProvider>
+      // DAY-9
+      <MuiThemeProvider theme={theme}>
         <React.Fragment>
           <div id="root">
-            <ChildrenDemo />
+            <Trainee />
           </div>
         </React.Fragment>
-      </ThemeProvider>
+      </MuiThemeProvider>
     );
   }
 }

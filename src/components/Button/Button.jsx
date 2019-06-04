@@ -5,7 +5,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
-class Buttons extends React.Component {
+class Button extends React.Component {
   render() {
     const { style, value, disabled } = this.props;
     return (
@@ -16,4 +16,4 @@ class Buttons extends React.Component {
   }
 }
 
-export default Buttons;
+export default Button;
