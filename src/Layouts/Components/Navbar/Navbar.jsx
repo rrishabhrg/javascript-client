@@ -32,13 +32,13 @@ export default function NavBar() {
           </Typography>
           <Button color="inherit">TRAINEE</Button>
           <Button color="inherit">
-            <Link to="/text-field-demo" style={{ color: 'white' }} activeStyle={{ color: 'red' }}>TEXTFIELD DEMO</Link>
+            <Link to="/text-field-demo" style={{ color: 'white', textDecoration: 'none' }}>TEXTFIELD DEMO</Link>
           </Button>
           <Button color="inherit">
-            <Link to="/input-demo" style={{ color: 'white' }} activeStyle={{ color: 'red' }}>INPUT DEMO</Link>
+            <Link to="/input-demo" style={{ color: 'white', textDecoration: 'none' }}>INPUT DEMO</Link>
           </Button>
           <Button color="inherit">
-            <Link to="/children-demo" style={{ color: 'white' }} activeStyle={{ color: 'red' }}>CHILDREN DEMO</Link>
+            <Link to="/children-demo" style={{ color: 'white', textDecoration: 'none' }}>CHILDREN DEMO</Link>
           </Button>
           <Button color="inherit">LOGOUT</Button>
         </Toolbar>
