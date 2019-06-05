@@ -1,9 +1,11 @@
-// const AuthLayout = ({children, ...rest}) => {
-//   return (
-//     <div className="page page-login">
-//       <div className="main">{children}</div>
-//     </div>
-//   )
-// }
+import React from 'react';
 
-// export default AuthLayout;
+const AuthLayout = ({ children, ...rest }) => {
+  return (
+    <div className="page page-login">
+      <div className="main">{children}</div>
+    </div>
+  );
+};
+
+export default AuthLayout;

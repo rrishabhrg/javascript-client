@@ -1,29 +1,21 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Login } from '../pages';
+import { PrivateLayout } from '../Layouts';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
       render={matchProps => (
-        <Login>
+        <PrivateLayout>
           <Component
             {...matchProps}
           />
-        </Login>
+        </PrivateLayout>
       )}
     />
   );
 };
-
-
-// const PrivateRoute = props => {
-//   console.log('PROPS value is: ', props);
-//   return (
-//     <div>Hello INDIA !!!!!</div>
-//   );
-// };
 
 export default PrivateRoute;
