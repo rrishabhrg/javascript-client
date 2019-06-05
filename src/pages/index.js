@@ -4,7 +4,7 @@ import { InputDemo } from './InputDemo';
 import { ChildrenDemo } from './ChildrenDemo';
 import { Trainee } from './Trainee';
 import { Login } from './Login';
-import { Navbar } from './Components';
+import { Navbar } from '../Layouts';
 
 export {
   TextFieldDemo, SliderDemo, InputDemo, ChildrenDemo, Trainee, Login, Navbar,

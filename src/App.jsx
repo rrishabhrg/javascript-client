@@ -2,12 +2,12 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import { InputDemo } from './pages';
-// import { ChildrenDemo } from './pages';
-// import { Trainee } from './pages';
-// import { Login } from './pages';
-import { Navbar } from './pages';
+import {
+  BrowserRouter, Switch,
+} from 'react-router-dom';
 import theme from './theme';
+import { PrivateRoute } from './Routes';
+import { ChildrenDemo, InputDemo, Login, Trainee, Navbar } from './pages';
 
 class App extends React.Component {
   render() {
@@ -35,14 +35,26 @@ class App extends React.Component {
       //   </React.Fragment>
       // </MuiThemeProvider>
       // DAY-10
+      // <MuiThemeProvider theme={theme}>
+      //   <React.Fragment>
+      //     <CssBaseline />
+      //     <div id="root">
+      //       {/* <Login /> */}
+      //       <Navbar />
+      //     </div>
+      //   </React.Fragment>
+      // </MuiThemeProvider>
+      // DAY-11
       <MuiThemeProvider theme={theme}>
-        <React.Fragment>
+        <BrowserRouter>
           <CssBaseline />
-          <div id="root">
-            {/* <Login /> */}
-            <Navbar />
-          </div>
-        </React.Fragment>
+          <Switch>
+            {/* <Route exact path="/child" component={ChildrenDemo} /> */}
+            {/* <Route exact path="/" component={Login} /> */}
+            {/* <AuthRoute /> */}
+            <PrivateRoute path="/login" component={Login} />
+          </Switch>
+        </BrowserRouter>
       </MuiThemeProvider>
     );
   }
