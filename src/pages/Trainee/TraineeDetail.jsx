@@ -29,7 +29,7 @@ class TraineeDetail extends React.Component {
     const date = this.getDateFormatted();
     return (
       <div>
-        <Paper tyle={{ marginTop: '2rem' }}>
+        <Paper style={{ marginTop: '2rem' }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={2}>
               <Avatar alt="Profile Picture" src="/images/pp.jpg" style={{ width: '8rem', height: '8rem' }} />
