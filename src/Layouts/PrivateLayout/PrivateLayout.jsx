@@ -3,9 +3,9 @@ import { Navbar } from '../../pages';
 
 const PrivateLayout = ({ children, ...rest }) => {
   return (
-    <div className="page page-login">
+    <div>
       <Navbar />
-      <div className="main">{children}</div>
+      <div>{children}</div>
     </div>
   );
 };

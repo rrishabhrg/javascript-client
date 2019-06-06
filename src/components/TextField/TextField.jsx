@@ -7,6 +7,7 @@ const TextField = (props) => {
     onChange, onBlur, error,
   } = props;
   const { errorStyle, common } = style;
+  // eslint-disable-next-line no-unused-vars
   let { combine } = style;
   if (!error) {
     combine = {
