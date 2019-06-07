@@ -5,11 +5,10 @@ import {
   Table, TableRow, TableCell, TableBody, TableHead,
 } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import { trainees } from '../Trainee';
 
 class TableDemo extends React.Component {
   render() {
-    const { columns } = this.props;
+    const { columns, data } = this.props;
     return (
       <React.Fragment>
         <Paper>
@@ -25,10 +24,13 @@ class TableDemo extends React.Component {
             </TableHead>
             <TableBody>
               {
-                trainees.map(row => (
+                data.map(row => (
                   <TableRow key={row.name}>
-                    <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.email}</TableCell>
+                    {
+                      columns.map(index => (
+                        <TableCell>{row[index.field]}</TableCell>
+                      ))
+                    }
                   </TableRow>
                 ))
               }

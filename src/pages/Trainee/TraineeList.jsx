@@ -27,6 +27,14 @@ class TraineeList extends React.Component {
               field: 'email',
               label: 'Email Address',
             },
+            {
+              field: 'role',
+              label: 'Role',
+            },
+            {
+              field: 'best',
+              label: 'Best Performance',
+            },
           ]}
         />
         <ul>

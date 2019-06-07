@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-function MadeWithLove() {
+function Footer() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       Successive Technologies
@@ -90,7 +90,7 @@ export default function Login() {
         </form>
       </div>
       <Box mt={5}>
-        <MadeWithLove />
+        <Footer />
       </Box>
     </Container>
   );
