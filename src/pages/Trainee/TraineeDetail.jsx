@@ -9,12 +9,12 @@ import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import moment from 'moment';
-import data from './Data/trainee';
+import { trainees } from './index';
 
 class TraineeDetail extends React.Component {
   displayTraineeDetails = () => {
     const { match } = this.props;
-    return data.filter(item => item.id === match.params.id);
+    return trainees.filter(item => item.id === match.params.id);
   }
 
   getDateFormatted = () => {
@@ -40,6 +40,7 @@ class TraineeDetail extends React.Component {
                   <Typography variant="h3">{item[0].name}</Typography>
                   <Typography variant="h5">{date}</Typography>
                   <Typography variant="h6">{item[0].email}</Typography>
+                  <Typography variant="h6">{item[0].role}</Typography>
                 </Paper>
               </Grid>
             </Grid>
