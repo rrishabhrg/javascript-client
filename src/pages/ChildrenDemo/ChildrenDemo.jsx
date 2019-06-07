@@ -11,6 +11,21 @@ class ChildrenDemo extends React.Component {
         <Math first={7} second={0} operator="/">
           {Template}
         </Math>
+        <Math first={1} second={2} operator="-">
+          {Template}
+        </Math>
+        <Math first={1} second={2} operator="*">
+          {Template}
+        </Math>
+        <Math first={1} second={2} operator="/">
+          {Template}
+        </Math>
+        <Math first={1} second={0} operator="/">
+          {Template}
+        </Math>
+        <Math first={1} second={2} operator="^">
+          {Template}
+        </Math>
       </React.Fragment>
     );
   }
