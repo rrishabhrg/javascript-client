@@ -181,7 +181,6 @@ class AddDialog extends React.Component {
     const {
       password, confirmPassword, showPassword, showConfirmPassword, open,
     } = this.state;
-
     console.log('STATE', this.state);
     return (
       <React.Fragment>

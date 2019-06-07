@@ -8,8 +8,10 @@ import {
 import theme from './theme';
 import { AuthRoute, PrivateRoute } from './Routes';
 import {
+  // eslint-disable-next-line
   ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, TextFieldDemo, SliderDemo,
 } from './pages';
+// import TableDemo from './pages/TableDemo/TableDemo';
 
 class App extends React.Component {
   render() {
