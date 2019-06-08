@@ -23,7 +23,7 @@ const trainees = [
   {
     id: '5c6567af7740654f0915fac3',
     name: 'Lokesh Rahul',
-    email: 'rahulkl@gmail.com',
+    email: 'rahul.kl@gmail.com',
     role: 'Middle Order Batsman',
     createdAt: '2019-02-13T18:15:11.778Z',
   },

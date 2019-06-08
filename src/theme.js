@@ -7,7 +7,7 @@ const theme = createMuiTheme({
       'cursive',
       'sans-serif',
     ].join(','),
-    fontSize: 10,
+    fontSize: 11,
   },
   raisedButton: {
     textColor: '#09054A', // this should work

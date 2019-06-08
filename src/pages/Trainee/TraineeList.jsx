@@ -1,16 +1,41 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable arrow-body-style */
+/* eslint-disable arrow-parens */
 /* eslint-disable no-console */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import { AddDialog } from './Components';
-import TableDemo from '../TableDemo/TableDemo';
 import { trainees } from './index';
+import TableDemo from '../TableDemo/TableDemo';
 
 class TraineeList extends React.Component {
+  state = {
+    order: 'asc',
+    orderBy: '',
+  }
+
+  handleSort = (order, orderBy) => () => {
+    if (order === 'asc') {
+      this.setState({
+        order: 'desc',
+      });
+    } else {
+      this.setState({
+        order: 'asc',
+      });
+    }
+  }
+
+  getDateFormatted = () => {
+    return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+  }
+
   render() {
     // eslint-disable-next-line react/prop-types
     const { match } = this.props;
-    console.log('traineeList', this.props);
+    const { order, orderBy } = this.state;
     return (
       <React.Fragment>
         <AddDialog />
@@ -21,21 +46,23 @@ class TraineeList extends React.Component {
             {
               field: 'name',
               label: 'Name',
-              align: 'center',
             },
             {
               field: 'email',
               label: 'Email Address',
+              format: value => value && value.toUpperCase(),
             },
             {
-              field: 'role',
-              label: 'Role',
-            },
-            {
-              field: 'best',
-              label: 'Best Performance',
+              field: 'createdAt',
+              label: 'Date',
+              align: 'right',
+              format: this.getDateFormatted,
             },
           ]}
+          orderBy={orderBy}
+          order={order}
+          onSort={this.handleSort}
+          onSelect={this.handleSelect}
         />
         <ul>
           {
