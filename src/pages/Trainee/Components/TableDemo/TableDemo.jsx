@@ -11,6 +11,54 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TablePagination from '@material-ui/core/TablePagination';
 
 class TableDemo extends React.Component {
+  // TablePaginationActions(props) {
+  //   const classes = useStyles1();
+  //   const theme = useTheme();
+  //   const { count, page, rowsPerPage, onChangePage } = props;
+
+  //   function handleBackButtonClick(event) {
+  //     onChangePage(event, page - 1);
+  //   }
+
+  //   function handleNextButtonClick(event) {
+  //     onChangePage(event, page + 1);
+  //   }
+
+  //   return (
+  //     <div className={classes.root}>
+  //       <IconButton
+  //         onClick={handleBackButtonClick}
+  //         disabled={page === 0}
+  //         aria-label="Previous Page"
+  //       >
+  //         {theme.direction === "rtl" ? (
+  //           <KeyboardArrowRight />
+  //         ) : (
+  //           <KeyboardArrowLeft />
+  //         )}
+  //       </IconButton>
+  //       <IconButton
+  //         onClick={handleNextButtonClick}
+  //         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+  //         aria-label="Next Page"
+  //       >
+  //         {theme.direction === "rtl" ? (
+  //           <KeyboardArrowLeft />
+  //         ) : (
+  //           <KeyboardArrowRight />
+  //         )}
+  //       </IconButton>
+  //     </div>
+  //   );
+  // }
+
+  // TablePaginationActions.propTypes = {
+  //   count: PropTypes.number.isRequired,
+  //   onChangePage: PropTypes.func.isRequired,
+  //   page: PropTypes.number.isRequired,
+  //   rowsPerPage: PropTypes.number.isRequired
+  // };
+
   render() {
     const {
       columns, data, actions, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
@@ -30,11 +78,7 @@ class TableDemo extends React.Component {
                     </TableCell>
                   ))
                 }
-                {
-                  actions.map(value => (
-                    <TableCell />
-                  ))
-                }
+                <TableCell />
               </TableRow>
             </TableHead>
             <TableBody>
