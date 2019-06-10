@@ -9,7 +9,6 @@ import {
 import Paper from '@material-ui/core/Paper';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TablePagination from '@material-ui/core/TablePagination';
-// import { UpdateIcon, RemoveIcon } from '../Trainee';
 
 class TableDemo extends React.Component {
   render() {

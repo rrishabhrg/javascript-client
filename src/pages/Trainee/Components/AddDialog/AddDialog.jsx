@@ -157,7 +157,6 @@ class AddDialog extends React.Component {
     const {
       name, emailAddress, password, confirmPassword,
     } = this.state;
-
     schema.validate({
       name, emailAddress, password, confirmPassword,
     }, { abortEarly: false }).then(() => {
@@ -196,9 +195,9 @@ class AddDialog extends React.Component {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
-                  required
-                  fullWidth
                   autoFocus
+                  fullWidth
+                  required
                   id="outlined-required"
                   label="Name"
                   margin="normal"
@@ -218,8 +217,8 @@ class AddDialog extends React.Component {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
+                  required
                   id="outlined-required"
                   label="Email Address"
                   type="email"
