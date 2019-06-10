@@ -9,7 +9,7 @@ import theme from './theme';
 import { AuthRoute, PrivateRoute } from './Routes';
 import {
   // eslint-disable-next-line
-  ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, TextFieldDemo, SliderDemo,
+  ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, SliderDemo, TextFieldDemo,
 } from './pages';
 // import TableDemo from './pages/TableDemo/TableDemo';
 
@@ -48,7 +48,7 @@ class App extends React.Component {
       //     </div>
       //   </React.Fragment>
       // </MuiThemeProvider>
-      // DAY-11  &   DAY-12
+      // DAY-11, 12, 13, 14, 15
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>

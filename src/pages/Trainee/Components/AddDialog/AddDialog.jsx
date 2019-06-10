@@ -4,13 +4,13 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogActions from '@material-ui/core/DialogActions';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Email from '@material-ui/icons/Email';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -179,9 +179,9 @@ class AddDialog extends React.Component {
 
   render() {
     const {
-      password, confirmPassword, showPassword, showConfirmPassword, open,
+      password, confirmPassword, showPassword, showConfirmPassword, open, btnDisabled,
     } = this.state;
-    console.log('STATE', this.state);
+    // console.log('STATE', this.state);
     return (
       <React.Fragment>
         <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
@@ -232,9 +232,7 @@ class AddDialog extends React.Component {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <IconButton>
-                          <Icon>email</Icon>
-                        </IconButton>
+                        <Email />
                       </InputAdornment>
                     ),
                   }}
@@ -294,7 +292,7 @@ class AddDialog extends React.Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button color="primary" disabled={this.state.btnDisabled}>
+            <Button color="primary" disabled={btnDisabled}>
               Submit
             </Button>
           </DialogActions>

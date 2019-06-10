@@ -1,3 +1,5 @@
 import { AddDialog } from './AddDialog';
+import { UpdateIcon } from './EditIcon';
+import { RemoveIcon } from './DeleteIcon';
 
-export { AddDialog };
+export { AddDialog, UpdateIcon, RemoveIcon };
