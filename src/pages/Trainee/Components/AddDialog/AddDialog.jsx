@@ -44,6 +44,7 @@ class AddDialog extends React.Component {
     console.log('value of CLOSE is: ', open);
     this.setState({
       open: false,
+      Errors: {},
     });
   }
 
@@ -180,7 +181,6 @@ class AddDialog extends React.Component {
     const {
       password, confirmPassword, showPassword, showConfirmPassword, open, btnDisabled,
     } = this.state;
-    // console.log('STATE', this.state);
     return (
       <React.Fragment>
         <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>

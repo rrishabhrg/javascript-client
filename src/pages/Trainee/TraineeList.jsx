@@ -7,7 +7,7 @@ import React from 'react';
 import moment from 'moment';
 import { AddDialog, UpdateIcon, RemoveIcon } from './Components';
 import { trainees } from './index';
-import { TableDemo } from '../../components';
+import { TableDemo } from '../TableDemo';
 
 class TraineeList extends React.Component {
   state = {
