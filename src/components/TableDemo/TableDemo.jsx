@@ -9,12 +9,12 @@ import {
 import Paper from '@material-ui/core/Paper';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TablePagination from '@material-ui/core/TablePagination';
-import { UpdateIcon, RemoveIcon } from '../Trainee';
+// import { UpdateIcon, RemoveIcon } from '../Trainee';
 
 class TableDemo extends React.Component {
   render() {
     const {
-      columns, data, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
+      columns, data, actions, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
     } = this.props;
     return (
       <React.Fragment>
@@ -31,7 +31,12 @@ class TableDemo extends React.Component {
                     </TableCell>
                   ))
                 }
-                <TableCell />
+                {
+                  // eslint-disable-next-line no-unused-vars
+                  actions.map(value => (
+                    <TableCell />
+                  ))
+                }
               </TableRow>
             </TableHead>
             <TableBody>
@@ -43,10 +48,11 @@ class TableDemo extends React.Component {
                         <TableCell align="left">{(value.format) ? value.format(row[value.field]) : row[value.field]}</TableCell>
                       ))
                     }
-                    <TableCell>
-                      <UpdateIcon />
-                      <RemoveIcon />
-                    </TableCell>
+                    {
+                      actions.map(value => (
+                        <TableCell>{value.icon}</TableCell>
+                      ))
+                    }
                   </TableRow>
                 ))
               }
