@@ -39,18 +39,18 @@ body {
     padding-right: 10px;
 }
 
-ul.breadcrum {
+ul.breadcrumb {
     padding: 0px 0px;
     margin: 0px 0px;
     list-style: none;
 }
 
-ul.breadcrum li {
+ul.breadcrumb li {
     display: inline;
     font-size: 16px;
 }
 
-ul.breadcrum li+li:before {
+ul.breadcrumb li+li:before {
     padding: 4px;
     color: black;
     content: "/\00a0";
