@@ -4,25 +4,11 @@ import React from 'react';
 class Math extends React.Component {
   calculator = (first, second, operator) => {
     switch (operator) {
-    case '+': {
-      const add = first + second;
-      return add;
-    }
-    case '-': {
-      const diff = first - second;
-      return diff;
-    }
-    case '*': {
-      const mult = first * second;
-      return mult;
-    }
-    case '/': {
-      if (second === 0) {
-        return 'Infinity';
-      }
-      return first / second;
-    }
-    default: return 'Invalid Operator !!';
+    case '+': return first + second;
+    case '-': return first - second;
+    case '*': return first * second;
+    case '/': return (second === 0) ? 'infinity' : first / second;
+    default: return 'Invalid Operator';
     }
   }
 
