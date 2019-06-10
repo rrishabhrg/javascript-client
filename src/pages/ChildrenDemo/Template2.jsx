@@ -2,18 +2,14 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-export const Template = (value, first, second, operator) => (
+export const Template2 = (value, first, second) => (
   <>
     <Typography>
       <p>
-        {first}
-        {operator}
-        {second}
-        =
-        {value}
+        When we divide {first} with {second} we get {value}
       </p>
     </Typography>
   </>
 );
 
-export default Template;
+export default Template2;

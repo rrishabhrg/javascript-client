@@ -32,7 +32,7 @@ class Math extends React.Component {
     } = this.props;
     const temp = this.calculator(first, second, operator);
     return (
-      React.cloneElement(children(temp))
+      React.cloneElement(children(temp, first, second, operator))
     );
   }
 }
