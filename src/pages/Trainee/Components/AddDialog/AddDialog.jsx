@@ -44,6 +44,7 @@ class AddDialog extends React.Component {
     console.log('value of CLOSE is: ', open);
     this.setState({
       open: false,
+      Errors: {},
     });
   }
 
@@ -179,10 +180,8 @@ class AddDialog extends React.Component {
 
   render() {
     const {
-      password, confirmPassword, showPassword, showConfirmPassword, open,
+      password, confirmPassword, showPassword, showConfirmPassword, open, btnDisabled,
     } = this.state;
-
-    console.log('STATE', this.state);
     return (
       <React.Fragment>
         <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
@@ -293,7 +292,7 @@ class AddDialog extends React.Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button color="primary" disabled={this.state.btnDisabled}>
+            <Button color="primary" disabled={btnDisabled}>
               Submit
             </Button>
           </DialogActions>
