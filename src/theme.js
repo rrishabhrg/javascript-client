@@ -7,8 +7,12 @@ const theme = createMuiTheme({
       'cursive',
       'sans-serif',
     ].join(','),
+    fontSize: 20,
   },
-  fontSize: 10,
+  raisedButton: {
+    textColor: '#09054A', // this should work
+    primaryTextColor: '#09054A', // or this if using `primary` style
+  },
 });
 
 export default theme;

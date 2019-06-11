@@ -4,15 +4,15 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import * as style from '../../components/Button/style';
 import {
   TextField, SelectField, RadioGroup, Button,
 } from '../../components';
 import {
   OPTIONS, CRIC, FOOT,
 } from '../../configs';
-import { btn } from '../../components/Button';
 import schema from '../../components/Schema';
+import * as style from '../../components/Button/style';
+import { btn } from '../../components/Button';
 
 class InputDemo extends React.Component {
   state = {
@@ -132,6 +132,7 @@ class InputDemo extends React.Component {
       ...button,
       ...myButton,
     };
+    console.log('state', this.state);
     return (
       <React.Fragment>
         <div>
