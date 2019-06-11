@@ -26,19 +26,15 @@ class EditTrainee extends React.Component {
   }
 
   handleNameChange = (event) => {
-    const { name } = this.state;
     this.setState({
       name: event.target.value,
     }, this.validator);
-    console.log('value of NAME is: ', name);
   }
 
   handleEmailChange = (event) => {
-    const { emailAddress } = this.state;
     this.setState({
       emailAddress: event.target.value,
     }, this.validator);
-    console.log('value of EMAIL is: ', emailAddress);
   }
 
   handleNameTouch = () => {

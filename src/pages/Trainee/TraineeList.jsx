@@ -19,6 +19,8 @@ class TraineeList extends React.Component {
     rowsPerPage: 10,
     openEdit: false,
     openDelete: false,
+    selectedRowDelete: {},
+    selectedRowEdit: {},
   }
 
   handleSort = (order, orderBy) => () => {
@@ -33,22 +35,10 @@ class TraineeList extends React.Component {
     }
   }
 
-  handleChangePage = (page, rowsPerPage) => {
-    if (page <= rowsPerPage) {
-      this.setState({
-        page: page + rowsPerPage,
-        rowsPerPage: rowsPerPage + rowsPerPage,
-      });
-    }
-  }
-
-  getDateFormatted = () => {
-    return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
-  }
-
   handleEditDialogOpen = (row) => {
     this.setState({
       openEdit: true,
+      selectedRowEdit: row,
     });
   }
 
@@ -56,21 +46,36 @@ class TraineeList extends React.Component {
     this.setState({
       openEdit: false,
     });
+    const { selectedRowEdit } = this.state;
+    console.log('Edited Item', selectedRowEdit);
   }
 
   handleRemoveDialogOpen = (row) => {
-    console.log('Deleted Item-->>', row);
     this.setState({
       openDelete: true,
-      selectedRow: { row },
+      selectedRowDelete: row,
     });
-    const { selectedRow } = this.state;
   }
 
   handleRemoveDialogClose = () => {
     this.setState({
       openDelete: false,
     });
+    const { selectedRowDelete } = this.state;
+    console.log('Deleted Item', selectedRowDelete);
+  }
+
+  getDateFormatted = () => {
+    return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+  }
+
+  handleChangePage = (page, rowsPerPage) => {
+    if (page <= rowsPerPage) {
+      this.setState({
+        page: page + rowsPerPage,
+        rowsPerPage: rowsPerPage + rowsPerPage,
+      });
+    }
   }
 
   render() {
