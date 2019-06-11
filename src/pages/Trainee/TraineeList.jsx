@@ -50,6 +50,12 @@ class TraineeList extends React.Component {
     console.log('Edited Item', selectedRowEdit);
   }
 
+  EditDialogClose = () => {
+    this.setState({
+      openEdit: false,
+    });
+  }
+
   handleRemoveDialogOpen = (row) => {
     this.setState({
       openDelete: true,
@@ -63,6 +69,12 @@ class TraineeList extends React.Component {
     });
     const { selectedRowDelete } = this.state;
     console.log('Deleted Item', selectedRowDelete);
+  }
+
+  RemoveDialogClose = () => {
+    this.setState({
+      openDelete: false,
+    });
   }
 
   getDateFormatted = () => {
@@ -87,8 +99,8 @@ class TraineeList extends React.Component {
     return (
       <React.Fragment>
         <AddDialog />
-        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} Errors={Errors} />
-        <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} />
+        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} EditClose={this.EditDialogClose} Errors={Errors} />
+        <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} RemoveClose={this.RemoveDialogClose} />
         <TableDemo
           id="id"
           data={trainees}
