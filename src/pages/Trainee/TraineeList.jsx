@@ -46,7 +46,7 @@ class TraineeList extends React.Component {
     return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
   }
 
-  handleEditDialogOpen = () => {
+  handleEditDialogOpen = (row) => {
     this.setState({
       openEdit: true,
     });
@@ -58,10 +58,13 @@ class TraineeList extends React.Component {
     });
   }
 
-  handleRemoveDialogOpen = () => {
+  handleRemoveDialogOpen = (row) => {
+    console.log('Deleted Item-->>', row);
     this.setState({
       openDelete: true,
+      selectedRow: { row },
     });
+    const { selectedRow } = this.state;
   }
 
   handleRemoveDialogClose = () => {
@@ -76,7 +79,6 @@ class TraineeList extends React.Component {
     const {
       order, orderBy, page, rowsPerPage, openEdit, openDelete, Errors,
     } = this.state;
-    // console.log('ID-->>', id);
     return (
       <React.Fragment>
         <AddDialog />

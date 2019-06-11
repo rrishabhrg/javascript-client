@@ -51,7 +51,7 @@ class TableDemo extends React.Component {
                     }
                     {
                       actions.map(value => (
-                        <TableCell onClick={value.handler}>{value.icon}</TableCell>
+                        <TableCell onClick={() => value.handler(row)}>{value.icon}</TableCell>
                       ))
                     }
                   </TableRow>
