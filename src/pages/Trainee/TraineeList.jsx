@@ -94,13 +94,21 @@ class TraineeList extends React.Component {
     // eslint-disable-next-line react/prop-types
     const { match } = this.props;
     const {
-      order, orderBy, page, rowsPerPage, openEdit, openDelete, Errors,
+      order, orderBy, page, rowsPerPage, openEdit, openDelete,
     } = this.state;
     return (
       <React.Fragment>
         <AddDialog />
-        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} EditClose={this.EditDialogClose} Errors={Errors} />
-        <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} RemoveClose={this.RemoveDialogClose} />
+        <EditTrainee
+          open={openEdit}
+          onEditClose={this.handleEditDialogClose}
+          EditClose={this.EditDialogClose}
+        />
+        <DeleteTrainee
+          open={openDelete}
+          onRemoveClose={this.handleRemoveDialogClose}
+          RemoveClose={this.RemoveDialogClose}
+        />
         <TableDemo
           id="id"
           data={trainees}
