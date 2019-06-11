@@ -1,42 +1,22 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-console */
 import React from 'react';
 import { Button } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+// import DeleteIcon from '@material-ui/icons/Delete';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 
-class RemoveIcon extends React.Component {
-  state = {
-    open: false,
-  }
-
-  handleDeleteDialogClickOpen = () => {
-    const { open } = this.state;
-    console.log('value of OPEN is: ', open);
-    this.setState({
-      open: true,
-    });
-  }
-
-  handleDeleteDialogClickClose = () => {
-    const { open } = this.state;
-    console.log('value of CLOSE is: ', open);
-    this.setState({
-      open: false,
-    });
-  }
-
+class DeleteTrainee extends React.Component {
   render() {
-    const { open } = this.state;
+    const { open, onRemoveClose } = this.props;
+    // console.log('DELETE_DATA-->>', this.props.data);
     return (
       <React.Fragment>
-        <Button onClick={this.handleDeleteDialogClickOpen}>
-          <DeleteIcon />
-        </Button>
-        <Dialog open={open} onClose={this.handleDeleteDialogClickClose} fullWidth="true" aria-labelledby="form-dialog-title">
+        <Dialog open={open} onClose={onRemoveClose} fullWidth="true" aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Remove Trainee</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -44,7 +24,7 @@ class RemoveIcon extends React.Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleDeleteDialogClickClose} color="primary">Cancel</Button>
+            <Button onClick={onRemoveClose} color="primary">Cancel</Button>
             <Button variant="contained" color="primary">Delete</Button>
           </DialogActions>
         </Dialog>
@@ -53,4 +33,4 @@ class RemoveIcon extends React.Component {
   }
 }
 
-export default RemoveIcon;
+export default DeleteTrainee;

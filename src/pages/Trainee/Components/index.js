@@ -1,5 +1,5 @@
 import { AddDialog } from './AddDialog';
-import { UpdateIcon } from './EditIcon';
-import { RemoveIcon } from './DeleteIcon';
+import { EditTrainee } from './EditIcon';
+import { DeleteTrainee } from './DeleteIcon';
 
-export { AddDialog, UpdateIcon, RemoveIcon };
+export { AddDialog, EditTrainee, DeleteTrainee };

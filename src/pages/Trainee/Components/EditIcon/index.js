@@ -1,3 +1,3 @@
-import UpdateIcon from './UpdateIcon';
+import EditTrainee from './EditTrainee';
 
-export { UpdateIcon };
+export { EditTrainee };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable array-callback-return */
 /* eslint-disable arrow-parens */
 /* eslint-disable no-console */
@@ -9,37 +10,19 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import { Button } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Email from '@material-ui/icons/Email';
 import schema from './Schema';
 
-class UpdateIcon extends React.Component {
+class EditTrainee extends React.Component {
   state = {
     name: '',
     emailAddress: '',
     Errors: {},
     isTouch: [],
     btnDisabled: true,
-    open: false,
-  }
-
-  handleEditDialogClickOpen = () => {
-    const { open } = this.state;
-    console.log('value of OPEN is: ', open);
-    this.setState({
-      open: true,
-    });
-  }
-
-  handleEditDialogClickClose = () => {
-    const { open } = this.state;
-    console.log('value of CLOSE is: ', open);
-    this.setState({
-      open: false,
-    });
   }
 
   handleNameChange = (event) => {
@@ -120,13 +103,14 @@ class UpdateIcon extends React.Component {
   }
 
   render() {
-    const { open, btnDisabled } = this.state;
+    const { open, onEditClose } = this.props;
+    // console.log('DATA-->>', this.props.data);
+    // console.log('OPEN-->>', open);
+    // console.log('ONEDITCLOSE-->>', onEditClose);
+    const { btnDisabled } = this.state;
     return (
       <React.Fragment>
-        <Button onClick={this.handleEditDialogClickOpen}>
-          <EditIcon />
-        </Button>
-        <Dialog open={open} onClose={this.handleEditDialogClickClose} fullWidth="true" aria-labelledby="form-dialog-title">
+        <Dialog open={open} onClose={onEditClose} fullWidth="true" aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Edit Trainee</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -176,7 +160,7 @@ class UpdateIcon extends React.Component {
             </form>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleEditDialogClickClose} color="primary">Cancel</Button>
+            <Button onClick={onEditClose} color="primary">Cancel</Button>
             <Button variant="contained" color="primary" disabled={btnDisabled}>Submit</Button>
           </DialogActions>
         </Dialog>
@@ -185,4 +169,4 @@ class UpdateIcon extends React.Component {
   }
 }
 
-export default UpdateIcon;
+export default EditTrainee;
