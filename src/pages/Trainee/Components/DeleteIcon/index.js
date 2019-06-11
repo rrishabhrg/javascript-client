@@ -1,3 +1,3 @@
-import RemoveIcon from './RemoveIcon';
+import DeleteTrainee from './DeleteTrainee';
 
-export { RemoveIcon };
+export { DeleteTrainee };

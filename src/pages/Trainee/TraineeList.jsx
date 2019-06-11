@@ -5,9 +5,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import moment from 'moment';
-import { AddDialog, UpdateIcon, RemoveIcon } from './Components';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { trainees } from './index';
 import { TableDemo } from '../TableDemo';
+import { AddDialog, EditTrainee, DeleteTrainee } from './Components';
 
 class TraineeList extends React.Component {
   state = {
@@ -15,6 +17,8 @@ class TraineeList extends React.Component {
     orderBy: '',
     page: 0,
     rowsPerPage: 10,
+    openEdit: false,
+    openDelete: false,
   }
 
   handleSort = (order, orderBy) => () => {
@@ -42,15 +46,41 @@ class TraineeList extends React.Component {
     return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
   }
 
+  handleEditDialogOpen = () => {
+    this.setState({
+      openEdit: true,
+    });
+  }
+
+  handleEditDialogClose = () => {
+    this.setState({
+      openEdit: false,
+    });
+  }
+
+  handleRemoveDialogOpen = () => {
+    this.setState({
+      openDelete: true,
+    });
+  }
+
+  handleRemoveDialogClose = () => {
+    this.setState({
+      openDelete: false,
+    });
+  }
+
   render() {
     // eslint-disable-next-line react/prop-types
     const { match } = this.props;
     const {
-      order, orderBy, page, rowsPerPage,
+      order, orderBy, page, rowsPerPage, openEdit, openDelete,
     } = this.state;
     return (
       <React.Fragment>
         <AddDialog />
+        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} />
+        <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} />
         <TableDemo
           id="id"
           data={trainees}
@@ -73,11 +103,11 @@ class TraineeList extends React.Component {
           ]}
           actions={[
             {
-              icon: <UpdateIcon />,
+              icon: <EditIcon />,
               handler: this.handleEditDialogOpen,
             },
             {
-              icon: <RemoveIcon />,
+              icon: <DeleteIcon />,
               handler: this.handleRemoveDialogOpen,
             },
           ]}
