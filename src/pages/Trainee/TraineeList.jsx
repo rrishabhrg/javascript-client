@@ -8,8 +8,9 @@ import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { trainees } from './index';
-import { TableDemo } from '../TableDemo';
-import { AddDialog, EditTrainee, DeleteTrainee } from './Components';
+import {
+  AddDialog, EditTrainee, DeleteTrainee, TableDemo,
+} from './Components';
 
 class TraineeList extends React.Component {
   state = {

@@ -1,5 +1,8 @@
 import { AddDialog } from './AddDialog';
 import { EditTrainee } from './EditIcon';
 import { DeleteTrainee } from './DeleteIcon';
+import { TableDemo } from './TableDemo';
 
-export { AddDialog, EditTrainee, DeleteTrainee };
+export {
+  AddDialog, EditTrainee, DeleteTrainee, TableDemo,
+};
