@@ -3,11 +3,11 @@ import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
-  BrowserRouter, Switch,
+  BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import theme from './theme';
 import {
-  ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, TextFieldDemo, SliderDemo,
+  ChildrenDemo, InputDemo, Login, Trainee, Navbar, TextFieldDemo, SliderDemo, NoMatch,
 } from './pages';
 
 class App extends React.Component {
@@ -50,13 +50,13 @@ class App extends React.Component {
         <CssBaseline />
         <BrowserRouter>
           <Switch>
-            <PrivateRoute path="/trainee" component={Trainee} />
-            <AuthRoute exact path="/login" component={Login} />
-            <PrivateRoute exact path="/text-field-demo" component={SliderDemo} />
-            <PrivateRoute exact path="/input-demo" component={InputDemo} />
-            <PrivateRoute exact path="/children-demo" component={ChildrenDemo} />
-            <PrivateRoute exact path="/" component={Navbar} />
-            <AuthRoute path="" component={NoMatch} />
+            <Route path="/trainee" component={Trainee} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/text-field-demo" component={SliderDemo} />
+            <Route exact path="/input-demo" component={InputDemo} />
+            <Route exact path="/children-demo" component={ChildrenDemo} />
+            <Route exact path="/" component={Navbar} />
+            <Route path="" component={NoMatch} />
           </Switch>
         </BrowserRouter>
       </MuiThemeProvider>

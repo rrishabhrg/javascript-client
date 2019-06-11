@@ -5,6 +5,7 @@ import { ChildrenDemo } from './ChildrenDemo';
 import { Trainee, TraineeList, TraineeDetail } from './Trainee';
 import { Login } from './Login';
 import { Navbar } from './Components';
+import { NoMatch } from './NoMatch';
 
 export {
   TextFieldDemo,
@@ -16,4 +17,5 @@ export {
   Navbar,
   TraineeList,
   TraineeDetail,
+  NoMatch,
 };
