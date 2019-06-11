@@ -8,7 +8,7 @@ import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { trainees } from './index';
-import { TableDemo } from '../TableDemo';
+import { TableDemo } from '../../components/TableDemo';
 import { AddDialog, EditTrainee, DeleteTrainee } from './Components';
 
 class TraineeList extends React.Component {
@@ -74,12 +74,13 @@ class TraineeList extends React.Component {
     // eslint-disable-next-line react/prop-types
     const { match } = this.props;
     const {
-      order, orderBy, page, rowsPerPage, openEdit, openDelete,
+      order, orderBy, page, rowsPerPage, openEdit, openDelete, Errors,
     } = this.state;
+    // console.log('ID-->>', id);
     return (
       <React.Fragment>
         <AddDialog />
-        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} />
+        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} Errors={Errors} />
         <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} />
         <TableDemo
           id="id"

@@ -11,58 +11,12 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TablePagination from '@material-ui/core/TablePagination';
 
 class TableDemo extends React.Component {
-  // TablePaginationActions(props) {
-  //   const classes = useStyles1();
-  //   const theme = useTheme();
-  //   const { count, page, rowsPerPage, onChangePage } = props;
-
-  //   function handleBackButtonClick(event) {
-  //     onChangePage(event, page - 1);
-  //   }
-
-  //   function handleNextButtonClick(event) {
-  //     onChangePage(event, page + 1);
-  //   }
-
-  //   return (
-  //     <div className={classes.root}>
-  //       <IconButton
-  //         onClick={handleBackButtonClick}
-  //         disabled={page === 0}
-  //         aria-label="Previous Page"
-  //       >
-  //         {theme.direction === "rtl" ? (
-  //           <KeyboardArrowRight />
-  //         ) : (
-  //           <KeyboardArrowLeft />
-  //         )}
-  //       </IconButton>
-  //       <IconButton
-  //         onClick={handleNextButtonClick}
-  //         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-  //         aria-label="Next Page"
-  //       >
-  //         {theme.direction === "rtl" ? (
-  //           <KeyboardArrowLeft />
-  //         ) : (
-  //           <KeyboardArrowRight />
-  //         )}
-  //       </IconButton>
-  //     </div>
-  //   );
-  // }
-
-  // TablePaginationActions.propTypes = {
-  //   count: PropTypes.number.isRequired,
-  //   onChangePage: PropTypes.func.isRequired,
-  //   page: PropTypes.number.isRequired,
-  //   rowsPerPage: PropTypes.number.isRequired
-  // };
-
   render() {
     const {
       columns, data, actions, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
     } = this.props;
+    // console.log('TABLE_DATA---->>>>', data);
+    // console.log('This.ID-->', id);
     return (
       <React.Fragment>
         <Paper>
@@ -78,10 +32,15 @@ class TableDemo extends React.Component {
                     </TableCell>
                   ))
                 }
-                <TableCell />
+                {
+                  // eslint-disable-next-line no-unused-vars
+                  actions.map(value => (
+                    <TableCell />
+                  ))
+                }
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody style={{ cursor: 'pointer' }}>
               {
                 data.map((row, index) => (
                   <TableRow key={row.name} hover selected={index % 2 === 0 ? true : false}>
@@ -92,7 +51,7 @@ class TableDemo extends React.Component {
                     }
                     {
                       actions.map(value => (
-                        <TableCell>{value.icon}</TableCell>
+                        <TableCell onClick={value.handler}>{value.icon}</TableCell>
                       ))
                     }
                   </TableRow>
