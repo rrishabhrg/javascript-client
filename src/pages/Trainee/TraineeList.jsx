@@ -8,9 +8,8 @@ import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { trainees } from './index';
-import {
-  AddDialog, EditTrainee, DeleteTrainee, TableDemo,
-} from './Components';
+import { TableDemo } from '../../components/TableDemo';
+import { AddDialog, EditTrainee, DeleteTrainee } from './Components';
 
 class TraineeList extends React.Component {
   state = {
@@ -20,6 +19,8 @@ class TraineeList extends React.Component {
     rowsPerPage: 10,
     openEdit: false,
     openDelete: false,
+    selectedRowDelete: {},
+    selectedRowEdit: {},
   }
 
   handleSort = (order, orderBy) => () => {
@@ -34,6 +35,40 @@ class TraineeList extends React.Component {
     }
   }
 
+  handleEditDialogOpen = (row) => {
+    this.setState({
+      openEdit: true,
+      selectedRowEdit: row,
+    });
+  }
+
+  handleEditDialogClose = () => {
+    this.setState({
+      openEdit: false,
+    });
+    const { selectedRowEdit } = this.state;
+    console.log('Edited Item', selectedRowEdit);
+  }
+
+  handleRemoveDialogOpen = (row) => {
+    this.setState({
+      openDelete: true,
+      selectedRowDelete: row,
+    });
+  }
+
+  handleRemoveDialogClose = () => {
+    this.setState({
+      openDelete: false,
+    });
+    const { selectedRowDelete } = this.state;
+    console.log('Deleted Item', selectedRowDelete);
+  }
+
+  getDateFormatted = () => {
+    return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+  }
+
   handleChangePage = (page, rowsPerPage) => {
     if (page <= rowsPerPage) {
       this.setState({
@@ -43,44 +78,16 @@ class TraineeList extends React.Component {
     }
   }
 
-  getDateFormatted = () => {
-    return moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
-  }
-
-  handleEditDialogOpen = () => {
-    this.setState({
-      openEdit: true,
-    });
-  }
-
-  handleEditDialogClose = () => {
-    this.setState({
-      openEdit: false,
-    });
-  }
-
-  handleRemoveDialogOpen = () => {
-    this.setState({
-      openDelete: true,
-    });
-  }
-
-  handleRemoveDialogClose = () => {
-    this.setState({
-      openDelete: false,
-    });
-  }
-
   render() {
     // eslint-disable-next-line react/prop-types
     const { match } = this.props;
     const {
-      order, orderBy, page, rowsPerPage, openEdit, openDelete,
+      order, orderBy, page, rowsPerPage, openEdit, openDelete, Errors,
     } = this.state;
     return (
       <React.Fragment>
         <AddDialog />
-        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} />
+        <EditTrainee open={openEdit} onEditClose={this.handleEditDialogClose} Errors={Errors} />
         <DeleteTrainee open={openDelete} onRemoveClose={this.handleRemoveDialogClose} />
         <TableDemo
           id="id"

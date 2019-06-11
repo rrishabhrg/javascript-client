@@ -26,19 +26,15 @@ class EditTrainee extends React.Component {
   }
 
   handleNameChange = (event) => {
-    const { name } = this.state;
     this.setState({
       name: event.target.value,
     }, this.validator);
-    console.log('value of NAME is: ', name);
   }
 
   handleEmailChange = (event) => {
-    const { emailAddress } = this.state;
     this.setState({
       emailAddress: event.target.value,
     }, this.validator);
-    console.log('value of EMAIL is: ', emailAddress);
   }
 
   handleNameTouch = () => {
@@ -104,9 +100,6 @@ class EditTrainee extends React.Component {
 
   render() {
     const { open, onEditClose } = this.props;
-    // console.log('DATA-->>', this.props.data);
-    // console.log('OPEN-->>', open);
-    // console.log('ONEDITCLOSE-->>', onEditClose);
     const { btnDisabled } = this.state;
     return (
       <React.Fragment>
@@ -161,7 +154,7 @@ class EditTrainee extends React.Component {
           </DialogContent>
           <DialogActions>
             <Button onClick={onEditClose} color="primary">Cancel</Button>
-            <Button variant="contained" color="primary" disabled={btnDisabled}>Submit</Button>
+            <Button onClick={onEditClose} variant="contained" color="primary" disabled={btnDisabled}>Submit</Button>
           </DialogActions>
         </Dialog>
       </React.Fragment>

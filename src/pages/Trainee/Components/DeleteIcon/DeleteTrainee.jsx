@@ -3,7 +3,6 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Button } from '@material-ui/core';
-// import DeleteIcon from '@material-ui/icons/Delete';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -13,7 +12,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 class DeleteTrainee extends React.Component {
   render() {
     const { open, onRemoveClose } = this.props;
-    // console.log('DELETE_DATA-->>', this.props.data);
     return (
       <React.Fragment>
         <Dialog open={open} onClose={onRemoveClose} fullWidth="true" aria-labelledby="form-dialog-title">
@@ -25,7 +23,7 @@ class DeleteTrainee extends React.Component {
           </DialogContent>
           <DialogActions>
             <Button onClick={onRemoveClose} color="primary">Cancel</Button>
-            <Button variant="contained" color="primary">Delete</Button>
+            <Button onClick={onRemoveClose} variant="contained" color="primary">Delete</Button>
           </DialogActions>
         </Dialog>
       </React.Fragment>

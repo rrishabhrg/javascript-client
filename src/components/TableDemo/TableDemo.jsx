@@ -16,6 +16,7 @@ class TableDemo extends React.Component {
       columns, data, actions, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
     } = this.props;
     // console.log('TABLE_DATA---->>>>', data);
+    // console.log('This.ID-->', id);
     return (
       <React.Fragment>
         <Paper>
@@ -39,7 +40,7 @@ class TableDemo extends React.Component {
                 }
               </TableRow>
             </TableHead>
-            <TableBody data={data}>
+            <TableBody style={{ cursor: 'pointer' }}>
               {
                 data.map((row, index) => (
                   <TableRow key={row.name} hover selected={index % 2 === 0 ? true : false}>
@@ -50,7 +51,7 @@ class TableDemo extends React.Component {
                     }
                     {
                       actions.map(value => (
-                        <TableCell onClick={value.handler}>{value.icon}</TableCell>
+                        <TableCell onClick={() => value.handler(row)}>{value.icon}</TableCell>
                       ))
                     }
                   </TableRow>

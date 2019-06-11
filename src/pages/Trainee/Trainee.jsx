@@ -9,7 +9,7 @@ import TraineeDetail from './TraineeDetail';
 class Trainee extends React.Component {
   render() {
     const { match } = this.props;
-    console.log('trainee', this.props);
+    // console.log('trainee', this.props);
     return (
       <Switch>
         <Route exact path={match.url} component={TraineeList} />
