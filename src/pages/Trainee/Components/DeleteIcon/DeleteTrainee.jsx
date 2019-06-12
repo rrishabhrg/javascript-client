@@ -11,10 +11,10 @@ import DialogActions from '@material-ui/core/DialogActions';
 
 class DeleteTrainee extends React.Component {
   render() {
-    const { open, onRemoveClose } = this.props;
+    const { open, onRemoveClose, RemoveClose } = this.props;
     return (
       <React.Fragment>
-        <Dialog open={open} onClose={onRemoveClose} fullWidth="true" aria-labelledby="form-dialog-title">
+        <Dialog open={open} onClose={RemoveClose} fullWidth="true" aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Remove Trainee</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -22,7 +22,7 @@ class DeleteTrainee extends React.Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={onRemoveClose} color="primary">Cancel</Button>
+            <Button onClick={RemoveClose} color="primary">Cancel</Button>
             <Button onClick={onRemoveClose} variant="contained" color="primary">Delete</Button>
           </DialogActions>
         </Dialog>

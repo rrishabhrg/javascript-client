@@ -99,11 +99,11 @@ class EditTrainee extends React.Component {
   }
 
   render() {
-    const { open, onEditClose } = this.props;
+    const { open, onEditClose, EditClose } = this.props;
     const { btnDisabled } = this.state;
     return (
       <React.Fragment>
-        <Dialog open={open} onClose={onEditClose} fullWidth="true" aria-labelledby="form-dialog-title">
+        <Dialog open={open} onClose={EditClose} fullWidth="true" aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Edit Trainee</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -153,7 +153,7 @@ class EditTrainee extends React.Component {
             </form>
           </DialogContent>
           <DialogActions>
-            <Button onClick={onEditClose} color="primary">Cancel</Button>
+            <Button onClick={EditClose} color="primary">Cancel</Button>
             <Button onClick={onEditClose} variant="contained" color="primary" disabled={btnDisabled}>Submit</Button>
           </DialogActions>
         </Dialog>
