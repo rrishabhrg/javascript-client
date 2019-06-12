@@ -12,6 +12,7 @@ import {
   ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, SliderDemo, TextFieldDemo,
 } from './pages';
 // import TableDemo from './pages/TableDemo/TableDemo';
+// import CustomizedSnackbars from './Contexts/SnackBarProvider/SnackBarProvider';
 
 class App extends React.Component {
   render() {
@@ -53,6 +54,7 @@ class App extends React.Component {
         <CssBaseline />
         <BrowserRouter>
           <Switch>
+            {/* <CustomizedSnackbars /> */}
             <PrivateRoute path="/trainee" component={Trainee} />
             <AuthRoute exact path="/login" component={Login} />
             <PrivateRoute exact path="/text-field-demo" component={SliderDemo} />
