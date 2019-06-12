@@ -10,8 +10,8 @@ const theme = createMuiTheme({
     fontSize: 11,
   },
   raisedButton: {
-    textColor: '#09054A', // this should work
-    primaryTextColor: '#09054A', // or this if using `primary` style
+    textColor: '#09054A',
+    primaryTextColor: '#09054A',
   },
 });
 

@@ -12,7 +12,7 @@ import {
   ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, SliderDemo, TextFieldDemo,
 } from './pages';
 // import TableDemo from './pages/TableDemo/TableDemo';
-// import CustomizedSnackbars from './Contexts/SnackBarProvider/SnackBarProvider';
+import { SnackbarProvider } from './Contexts';
 
 class App extends React.Component {
   render() {
@@ -50,21 +50,22 @@ class App extends React.Component {
       //   </React.Fragment>
       // </MuiThemeProvider>
       // DAY-11, 12, 13, 14, 15
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <BrowserRouter>
-          <Switch>
-            {/* <CustomizedSnackbars /> */}
-            <PrivateRoute path="/trainee" component={Trainee} />
-            <AuthRoute exact path="/login" component={Login} />
-            <PrivateRoute exact path="/text-field-demo" component={SliderDemo} />
-            <PrivateRoute exact path="/input-demo" component={InputDemo} />
-            <PrivateRoute exact path="/children-demo" component={ChildrenDemo} />
-            <PrivateRoute exact path="/" component={Navbar} />
-            <AuthRoute path="" component={NoMatch} />
-          </Switch>
-        </BrowserRouter>
-      </MuiThemeProvider>
+      <SnackbarProvider>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          <BrowserRouter>
+            <Switch>
+              <PrivateRoute path="/trainee" component={Trainee} />
+              <AuthRoute exact path="/login" component={Login} />
+              <PrivateRoute exact path="/text-field-demo" component={SliderDemo} />
+              <PrivateRoute exact path="/input-demo" component={InputDemo} />
+              <PrivateRoute exact path="/children-demo" component={ChildrenDemo} />
+              <PrivateRoute exact path="/" component={Navbar} />
+              <AuthRoute path="" component={NoMatch} />
+            </Switch>
+          </BrowserRouter>
+        </MuiThemeProvider>
+      </SnackbarProvider>
     );
   }
 }
