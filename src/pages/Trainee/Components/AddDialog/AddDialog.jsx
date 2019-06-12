@@ -32,52 +32,45 @@ class AddDialog extends React.Component {
   }
 
   handleClickOpen = () => {
-    const { open } = this.state;
-    console.log('value of OPEN is: ', open);
     this.setState({
       open: true,
     });
   }
 
   handleClose = () => {
-    const { open } = this.state;
-    console.log('value of CLOSE is: ', open);
     this.setState({
       open: false,
       Errors: {},
     });
   }
 
+  handleOnSubmit = () => {
+    const { name, emailAddress, password } = this.state;
+    console.log({ name, emailAddress, password });
+  }
+
   handleNameChange = (event) => {
-    const { name } = this.state;
     this.setState({
       name: event.target.value,
     }, this.validator);
-    console.log('value of NAME is: ', name);
   }
 
   handleEmailChange = (event) => {
-    const { emailAddress } = this.state;
     this.setState({
       emailAddress: event.target.value,
     }, this.validator);
-    console.log('value of EMAIL is: ', emailAddress);
   }
 
   handlePasswordChange = () => (event) => {
-    const { password } = this.state;
     this.setState({
       password: event.target.value,
     }, this.validator);
-    console.log('value of Password is: ', password);
   }
 
   handleConfirmPasswordChange = () => (event) => {
-    const { confirmPassword } = this.state;
     this.setState({
       confirmPassword: event.target.value,
     }, this.validator);
-    console.log('value of Confirm-Password is: ', confirmPassword);
   }
 
   handleClickShowPassword = () => {
@@ -85,7 +78,6 @@ class AddDialog extends React.Component {
     this.setState({
       showPassword: !showPassword,
     });
-    console.log('value of Show-Password is: ', showPassword);
   }
 
   handleClickShowConfirmPassword = () => {
@@ -93,7 +85,6 @@ class AddDialog extends React.Component {
     this.setState({
       showConfirmPassword: !showConfirmPassword,
     });
-    console.log('value of Show-Confirm-Password is: ', showConfirmPassword);
   }
 
   handleNameTouch = () => {
@@ -292,7 +283,7 @@ class AddDialog extends React.Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button color="primary" disabled={btnDisabled}>
+            <Button color="primary" disabled={btnDisabled} onClick={this.handleOnSubmit}>
               Submit
             </Button>
           </DialogActions>
