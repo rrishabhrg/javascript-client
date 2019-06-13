@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable react/prop-types */
@@ -33,7 +34,6 @@ class TableDemo extends React.Component {
                   ))
                 }
                 {
-                  // eslint-disable-next-line no-unused-vars
                   actions.map(value => (
                     <TableCell />
                   ))

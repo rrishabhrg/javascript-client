@@ -1,19 +1,41 @@
 import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
-import { withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import { yellow, red, green, blueGrey } from '@material-ui/core/colors';
+// import CheckCircleOutline from '@material-ui/icons/CheckCircleOutline';
 
 export const MyContext = React.createContext();
 
 const styles = {
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
+  success: {
+    // backgroundColor: green[600],
+    backgroundColor: green,
+  },
+  error: {
+    // backgroundColor: theme.palette.error.dark,
+    backgroundColor: red,
+  },
+  info: {
+    // backgroundColor: theme.palette.primary.dark,
+    backgroundColor: blueGrey,
+  },
+  warning: {
+    // backgroundColor: amber[700],
+    backgroundColor: yellow,
+  },
+  icon: {
+    fontSize: 20,
+  },
+  iconVariant: {
+    opacity: 0.9,
+    // marginRight: theme.spacing(1),
+  },
+  message: {
+    display: 'flex',
+    alignItems: 'center',
   },
 };
 
@@ -27,7 +49,7 @@ class SnackbarProvider extends React.Component {
     };
   }
 
-  openSnackBar = (message, status) => {
+  handleOpenSnackBar = (message, status) => {
     this.setState({
       open: true,
       message,
@@ -48,7 +70,7 @@ class SnackbarProvider extends React.Component {
       <React.Fragment>
         <MyContext.Provider
           value={{
-            onClick: this.openSnackBar,
+            onOpenSnackbar: this.handleOpenSnackBar,
             message,
             status,
           }}
@@ -61,18 +83,24 @@ class SnackbarProvider extends React.Component {
             horizontal: 'left',
           }}
           open={open}
-          message
-          status
-          autoHideDuration={5000}
+          autoHideDuration={3000}
           onClose={this.closeSnackBar}
-          className={classes.root}
-        >
-          <SnackbarProvider
-            onClose={this.closeSnackBar}
-            variant="success"
-            message="This is a success message!"
-          />
-        </Snackbar>
+          onClick={this.closeSnackBar}
+          ContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">{message}</span>}
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              onClick={this.closeSnackBar}
+            >
+              <CloseIcon />
+            </IconButton>,
+          ]}
+        />
       </React.Fragment>
     );
   }
