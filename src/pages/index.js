@@ -4,7 +4,7 @@ import { InputDemo } from './InputDemo';
 import { ChildrenDemo } from './ChildrenDemo';
 import { Trainee, TraineeList, TraineeDetail } from './Trainee';
 import { Login } from './Login';
-import { Navbar, Footer } from '../Layouts';
+import { Navbar } from './Components';
 import { NoMatch } from './NoMatch';
 
 export {
@@ -15,8 +15,7 @@ export {
   Trainee,
   Login,
   Navbar,
-  Footer,
-  NoMatch,
   TraineeList,
   TraineeDetail,
+  NoMatch,
 };
