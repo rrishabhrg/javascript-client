@@ -36,7 +36,10 @@ class TraineeDetail extends React.Component {
             </Grid>
             <Grid item xs={12} sm={10}>
               <Grid container xs={12}>
-                <Paper style={{ width: '100%', marginRight: '1rem', paddingLeft: '1rem', height: '8rem' }}>
+                <Paper style={{
+                  width: '100%', marginRight: '1rem', paddingLeft: '1rem', height: '8rem',
+                }}
+                >
                   <Typography variant="h3">{item[0].name}</Typography>
                   <Typography variant="h5">{date}</Typography>
                   <Typography variant="h6">{item[0].email}</Typography>

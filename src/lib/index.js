@@ -1,3 +1,3 @@
-import { getRandomNumber, getNextRoundRobin } from './utils';
+import { getRandomNumber, getNextRoundRobin, callApi } from './utils';
 
-export { getRandomNumber, getNextRoundRobin };
+export { getRandomNumber, getNextRoundRobin, callApi };

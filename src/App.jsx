@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
-  BrowserRouter, Switch,
+  BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import theme from './theme';
 import { AuthRoute, PrivateRoute } from './Routes';
@@ -44,7 +45,7 @@ class App extends React.Component {
       //   <React.Fragment>
       //     <CssBaseline />
       //     <div id="root">
-      //       {/* <Login /> */}
+      //       <Login />
       //       <Navbar />
       //     </div>
       //   </React.Fragment>
@@ -61,7 +62,7 @@ class App extends React.Component {
               <PrivateRoute exact path="/input-demo" component={InputDemo} />
               <PrivateRoute exact path="/children-demo" component={ChildrenDemo} />
               <PrivateRoute exact path="/" component={Navbar} />
-              <AuthRoute path="" component={NoMatch} />
+              <Route path="" component={NoMatch} />
             </Switch>
           </BrowserRouter>
         </MuiThemeProvider>

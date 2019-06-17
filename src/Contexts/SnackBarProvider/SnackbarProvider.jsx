@@ -4,40 +4,29 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { yellow, red, green, blueGrey } from '@material-ui/core/colors';
-// import CheckCircleOutline from '@material-ui/icons/CheckCircleOutline';
+import { green } from '@material-ui/core/colors';
 
 export const MyContext = React.createContext();
 
-const styles = {
+const styles = theme => ({
   success: {
-    // backgroundColor: green[600],
-    backgroundColor: green,
+    backgroundColor: green[600],
   },
   error: {
-    // backgroundColor: theme.palette.error.dark,
-    backgroundColor: red,
-  },
-  info: {
-    // backgroundColor: theme.palette.primary.dark,
-    backgroundColor: blueGrey,
-  },
-  warning: {
-    // backgroundColor: amber[700],
-    backgroundColor: yellow,
+    backgroundColor: theme.palette.error.dark,
   },
   icon: {
     fontSize: 20,
   },
   iconVariant: {
     opacity: 0.9,
-    // marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1),
   },
   message: {
     display: 'flex',
     alignItems: 'center',
   },
-};
+});
 
 class SnackbarProvider extends React.Component {
   constructor(props) {
@@ -89,7 +78,7 @@ class SnackbarProvider extends React.Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={<span id="message-id">{message}</span>}
+          message={<span id="message-id" className={classes.message}>{message}</span>}
           action={[
             <IconButton
               key="close"

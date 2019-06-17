@@ -1,3 +1,4 @@
 import { getRandomNumber, getNextRoundRobin } from './math';
+import callApi from './api';
 
-export { getRandomNumber, getNextRoundRobin };
+export { getRandomNumber, getNextRoundRobin, callApi };
