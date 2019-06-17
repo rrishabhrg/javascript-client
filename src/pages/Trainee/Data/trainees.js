@@ -1,0 +1,81 @@
+const trainees = [
+  {
+    id: '5c6c47af7747854f0915fac4',
+    name: 'Rohit Sharma',
+    email: 'rohit.sharma@gmail.com',
+    role: 'Opening Batsman & Vice-Captain',
+    createdAt: '2019-02-14T18:15:11.778Z',
+  },
+  {
+    id: '5c6c47af7740654f0915fac1',
+    name: 'Shikhar Dhawan',
+    email: 'shikhar.dhawan@gmail.com',
+    role: 'Opening Batsman',
+    createdAt: '2019-02-10T18:15:11.778Z',
+  },
+  {
+    id: '5c6c47af7740654f0455fac2',
+    name: 'Virat Kohli',
+    email: 'virat.kohli@gmail.com',
+    role: 'Batsman & Captain',
+    createdAt: '2019-02-12T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Lokesh Rahul',
+    email: 'rahulkl@gmail.com',
+    role: 'Middle Order Batsman',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Mahendra Singh Dhoni',
+    email: 'msdhoni@gmail.com',
+    role: 'Wicket Keeper Batsman',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Kedar Jadhav',
+    email: 'kedar.jadhav@gmail.com',
+    role: 'Lower Middle Order Batsman',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Hardik Pandya',
+    email: 'hardik.pandya@gmail.com',
+    role: 'Lower Middle Order Batsman(Finisher)',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Bhuvaneshwar Kumar',
+    email: 'bhuvaneshwar.kumar@gmail.com',
+    role: 'Fast Bowler',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Kuldeep Yadav',
+    email: 'kuldeep.yadav@gmail.com',
+    role: 'Chinaman Spin Bowler',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6567af7740654f0915fac3',
+    name: 'Yuzvendra Chahal',
+    email: 'yuzi.chahal@gmail.com',
+    role: 'Leg Spin Bowler',
+    createdAt: '2019-02-13T18:15:11.778Z',
+  },
+  {
+    id: '5c6c47af7740654f09d58fac5',
+    name: 'Jasprit Bumrah',
+    email: 'jasprit.bumhrah@gmail.com',
+    role: 'Fast Bowler',
+    createdAt: '2019-02-15T18:15:11.778Z',
+  },
+];
+
+export default trainees;

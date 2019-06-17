@@ -9,6 +9,7 @@ import theme from './theme';
 import {
   ChildrenDemo, InputDemo, Login, Trainee, Navbar, TextFieldDemo, SliderDemo, NoMatch,
 } from './pages';
+// import TableDemo from './pages/TableDemo/TableDemo';
 
 class App extends React.Component {
   render() {
