@@ -1,5 +1,6 @@
 import React from 'react';
 import { Slider } from '../../components';
+import { TextFieldDemo } from '../TextFieldDemo';
 
 const banners = [
   'cloud.jpg',
@@ -21,6 +22,7 @@ const SliderDemo = () => (
   <React.Fragment>
     <div>
       <Slider random altText={altText} banners={banners} />
+      <TextFieldDemo />
     </div>
   </React.Fragment>
 );
