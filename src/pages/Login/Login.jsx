@@ -109,7 +109,7 @@ class Login extends React.Component {
 
   validator = () => {
     const {
-      email, password, btnDisabled,
+      email, password,
     } = this.state;
     schema.validate({
       email, password,
@@ -118,7 +118,6 @@ class Login extends React.Component {
         Errors: {},
         btnDisabled: false,
       });
-      console.log(btnDisabled);
     }).catch((errors) => {
       const error = {};
       errors.inner.map((err) => {
@@ -141,17 +140,13 @@ class Login extends React.Component {
   handleOnSubmitLogin = async (event) => {
     event.preventDefault();
     const { value } = this.props;
-    const {
-      email, password,
-    } = this.state;
-    const data = {
-      email,
-      password,
-    };
+    const { email, password } = this.state;
+    const data = { email, password };
     const url = 'https://express-training.herokuapp.com/api/user/login';
     const method = 'post';
     try {
       const res = await callApi({ data, method, url });
+      console.log('The Response For Login Is :', res);
       if (res) {
         localStorage.setItem('token', res.data.data);
         this.setState({

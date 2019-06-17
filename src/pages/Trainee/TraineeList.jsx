@@ -15,6 +15,7 @@ import {
   AddDialog, EditTrainee, DeleteTrainee, schema,
 } from './Components';
 import { SnackbarHOC } from '../../Contexts';
+import { callApi } from '../../lib';
 
 class TraineeList extends React.Component {
   state = {
@@ -140,12 +141,35 @@ class TraineeList extends React.Component {
     });
   }
 
-  handleOnSubmit = () => {
-    const { name, emailAddress, password } = this.state;
+  handleOnSubmit = async (event) => {
+    event.preventDefault();
     const { value } = this.props;
-    console.log({ name, emailAddress, password });
-    console.log(this.props);
+    const {
+      name, emailAddress, password, confirmPassword,
+    } = this.state;
+    console.log({
+      name, emailAddress, password, confirmPassword,
+    });
     value.onOpenSnackbar('Trainee Added Successfully', 'Well Done !!!! ');
+    const data = {
+      name, emailAddress, password, confirmPassword,
+    };
+    const url = 'https://express-training.herokuapp.com/api/trainee';
+    const method = 'get';
+    console.log('I am here');
+    try {
+      const res = await callApi({ data, method, url });
+      console.log('I am inside try block');
+      console.log('The Response For Add Trainee Is :', res);
+      // if (res) {
+      //   localStorage.setItem('token', res.data.data);
+      //   this.setState({
+      //     btnDisabled: true,
+      //   });
+      // }
+    } catch (error) {
+      console.log('ERROR OCCURS---->', error);
+    }
   }
 
   handleSort = (order, orderBy) => () => {
