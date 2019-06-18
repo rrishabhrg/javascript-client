@@ -26,6 +26,10 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
   },
+  status: {
+    display: 'flex',
+    alignItems: 'right',
+  },
 });
 
 class SnackbarProvider extends React.Component {
@@ -78,7 +82,12 @@ class SnackbarProvider extends React.Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={<span id="message-id" className={classes.message}>{message}</span>}
+          message={(
+            <>
+              <span id="message-id" className={classes.message}>{message}</span>
+              <span id="status-id" className={classes.status}>{status}</span>
+            </>
+          )}
           action={[
             <IconButton
               key="close"

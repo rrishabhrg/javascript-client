@@ -16,6 +16,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class AddDialog extends React.Component {
   state = {
@@ -112,8 +113,8 @@ class AddDialog extends React.Component {
                   variant="outlined"
                   onChange={emailChange}
                   onBlur={emailTouch}
-                  error={!!getError('emailAddress')}
-                  helperText={getError('emailAddress')}
+                  error={!!getError('email')}
+                  helperText={getError('email')}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
@@ -178,7 +179,8 @@ class AddDialog extends React.Component {
               Cancel
             </Button>
             <Button color="primary" disabled={btnOnOff} onClick={onSubmit}>
-              Submit
+              {/* Submit */}
+              {btnOnOff ? <CircularProgress /> : 'Submit'}
             </Button>
           </DialogActions>
         </Dialog>

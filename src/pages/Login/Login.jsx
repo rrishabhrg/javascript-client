@@ -36,7 +36,8 @@ const styles = theme => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '77%',
+    // width: '77%',
+    width: theme.spacing(40),
     marginTop: theme.spacing(1),
   },
   footer: {
@@ -151,7 +152,7 @@ class Login extends React.Component {
         localStorage.setItem('token', res.data.data);
         this.setState({
           redirect: true,
-          loading: true,
+          // loading: true,
         });
       } else {
         value.onOpenSnackbar('Invalid Credentials', 'Retry !!!! ');
@@ -237,7 +238,7 @@ class Login extends React.Component {
               disabled={btnDisabled}
               onClick={this.handleOnSubmitLogin}
             >
-              {loading ? <CircularProgress /> : 'LogIn'}
+              {btnDisabled && loading ? <CircularProgress /> : 'LogIn'}
             </Button>
           </form>
           <Typography variant="body2" color="textSecondary" className={classes.footer} align="center">

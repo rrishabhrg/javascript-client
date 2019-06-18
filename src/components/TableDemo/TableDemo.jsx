@@ -16,8 +16,6 @@ class TableDemo extends React.Component {
     const {
       columns, data, actions, orderBy, order, onSort, count, page, rowsPerPage, handleChangePage,
     } = this.props;
-    // console.log('TABLE_DATA---->>>>', data);
-    // console.log('This.ID-->', id);
     return (
       <React.Fragment>
         <Paper>

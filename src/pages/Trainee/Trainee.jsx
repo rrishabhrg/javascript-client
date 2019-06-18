@@ -11,7 +11,7 @@ class Trainee extends React.Component {
     const { match } = this.props;
     return (
       <Switch>
-        <Route path={match.url} component={TraineeList} />
+        <Route exact path={match.url} component={TraineeList} />
         <Route exact path={`${match.url}/:id`} component={TraineeDetail} />
       </Switch>
     );

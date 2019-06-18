@@ -5,7 +5,7 @@ const schema = yup.object({
     .string()
     .min(3, 'Name must be at least 3 characters long.')
     .required('Name is required field.'),
-  emailAddress: yup
+  email: yup
     .string()
     .email('Email Address must be a valid email.')
     .required('Email Address is required field.'),

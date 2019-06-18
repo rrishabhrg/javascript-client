@@ -9,6 +9,7 @@ import React from 'react';
 import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { trainees } from './index';
 import { TableDemo } from '../../components/TableDemo';
 import {
@@ -18,22 +19,47 @@ import { SnackbarHOC } from '../../Contexts';
 import { callApi } from '../../lib';
 
 class TraineeList extends React.Component {
-  state = {
-    order: 'asc',
-    orderBy: '',
-    page: 0,
-    rowsPerPage: 10,
-    openEdit: false,
-    openDelete: false,
-    selectedRowDelete: {},
-    selectedRowEdit: {},
-    name: '',
-    emailAddress: '',
-    password: '',
-    confirmPassword: '',
-    Errors: {},
-    isTouch: [],
-    btnDisabled: true,
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: 'asc',
+      orderBy: '',
+      page: 0,
+      rowsPerPage: 10,
+      openEdit: false,
+      openDelete: false,
+      selectedRowDelete: {},
+      selectedRowEdit: {},
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      Errors: {},
+      isTouch: [],
+      btnDisabled: true,
+      list: {},
+    };
+  }
+
+  componentDidMount = async () => {
+    const { value } = this.props;
+    const {
+      name, email, list, count,
+    } = this.state;
+    const method = 'get';
+    const url = 'https://express-training.herokuapp.com/api/trainee?limit=20&skip=0';
+    const data = {};
+    try {
+      const res = await callApi({ method, url, data });
+      this.setState({
+        list: res.data.data.records,
+      });
+      if (res) {
+        value.onOpenSnackbar(res.data.message, res.data.status);
+      }
+    } catch (error) {
+      console.log('ERROR OCCURS---->', error);
+    }
   }
 
   handleNameChange = (event) => {
@@ -44,7 +70,7 @@ class TraineeList extends React.Component {
 
   handleEmailChange = (event) => {
     this.setState({
-      emailAddress: event.target.value,
+      email: event.target.value,
     }, this.validator);
   }
 
@@ -72,8 +98,8 @@ class TraineeList extends React.Component {
 
   handleEmailTouch = () => {
     const { isTouch } = this.state;
-    if (!isTouch.includes('emailAddress')) {
-      isTouch.push('emailAddress');
+    if (!isTouch.includes('email')) {
+      isTouch.push('email');
     }
     this.setState({
       isTouch,
@@ -120,10 +146,10 @@ class TraineeList extends React.Component {
 
   validator = () => {
     const {
-      name, emailAddress, password, confirmPassword,
+      name, email, password, confirmPassword,
     } = this.state;
     schema.validate({
-      name, emailAddress, password, confirmPassword,
+      name, email, password, confirmPassword,
     }, { abortEarly: false }).then(() => {
       this.setState({
         Errors: {},
@@ -145,27 +171,21 @@ class TraineeList extends React.Component {
     event.preventDefault();
     const { value } = this.props;
     const {
-      name, emailAddress, password,
+      name, email, password,
     } = this.state;
     console.log({
-      name, emailAddress, password,
+      name, email, password,
     });
-    // value.onOpenSnackbar('Trainee Added Successfully', 'Well Done !!!! ');
-    const data = {
-      name, emailAddress, password,
-    };
-    const url = 'https://express-training.herokuapp.com/api/trainee';
     const method = 'post';
+    const url = 'https://express-training.herokuapp.com/api/trainee';
+    const data = {
+      name, email, password,
+    };
     try {
       const res = await callApi({ method, url, data });
-      // console.log('I am inside try block');
-      // console.log('The Response For Add Trainee Is :', res);
-      // if (res) {
-      //   localStorage.setItem('token', res.data.data);
-      //   this.setState({
-      //     btnDisabled: true,
-      //   });
-      // }
+      if (res) {
+        value.onOpenSnackbar(res.data.message, res.data.status);
+      }
     } catch (error) {
       console.log('ERROR OCCURS---->', error);
     }
@@ -245,8 +265,13 @@ class TraineeList extends React.Component {
   render() {
     const { match } = this.props;
     const {
-      order, orderBy, page, rowsPerPage, openEdit, openDelete, btnDisabled, Errors,
+      order, orderBy, page, rowsPerPage, openEdit, openDelete, btnDisabled, Errors, list,
     } = this.state;
+    if (!list.length) {
+      return (
+        <CircularProgress />
+      );
+    }
     return (
       <React.Fragment>
         <AddDialog
@@ -278,7 +303,8 @@ class TraineeList extends React.Component {
         />
         <TableDemo
           id="id"
-          data={trainees}
+          // data={trainees}
+          data={list}
           columns={[
             {
               field: 'name',

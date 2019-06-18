@@ -12,7 +12,7 @@ import {
   // eslint-disable-next-line
   ChildrenDemo, InputDemo, Login, Trainee, Navbar, NoMatch, SliderDemo, TextFieldDemo,
 } from './pages';
-// import TableDemo from './pages/TableDemo/TableDemo';
+import { TableDemo } from './components';
 import { SnackbarProvider } from './Contexts';
 
 class App extends React.Component {
@@ -56,6 +56,7 @@ class App extends React.Component {
           <CssBaseline />
           <BrowserRouter>
             <Switch>
+              {/* <Route path="/table-demo" component={TableDemo} /> */}
               <PrivateRoute path="/trainee" component={Trainee} />
               <AuthRoute exact path="/login" component={Login} />
               <PrivateRoute exact path="/text-field-demo" component={SliderDemo} />
