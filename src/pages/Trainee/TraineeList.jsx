@@ -145,22 +145,21 @@ class TraineeList extends React.Component {
     event.preventDefault();
     const { value } = this.props;
     const {
-      name, emailAddress, password, confirmPassword,
+      name, emailAddress, password,
     } = this.state;
     console.log({
-      name, emailAddress, password, confirmPassword,
+      name, emailAddress, password,
     });
-    value.onOpenSnackbar('Trainee Added Successfully', 'Well Done !!!! ');
+    // value.onOpenSnackbar('Trainee Added Successfully', 'Well Done !!!! ');
     const data = {
-      name, emailAddress, password, confirmPassword,
+      name, emailAddress, password,
     };
     const url = 'https://express-training.herokuapp.com/api/trainee';
-    const method = 'get';
-    console.log('I am here');
+    const method = 'post';
     try {
-      const res = await callApi({ data, method, url });
-      console.log('I am inside try block');
-      console.log('The Response For Add Trainee Is :', res);
+      const res = await callApi({ method, url, data });
+      // console.log('I am inside try block');
+      // console.log('The Response For Add Trainee Is :', res);
       // if (res) {
       //   localStorage.setItem('token', res.data.data);
       //   this.setState({

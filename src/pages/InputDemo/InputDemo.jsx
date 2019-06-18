@@ -111,7 +111,6 @@ class InputDemo extends React.Component {
       });
     }).catch((errors) => {
       const error = {};
-      console.log('error', errors);
       errors.inner.map((err) => {
         error[err.path] = err.message;
       });
@@ -124,7 +123,7 @@ class InputDemo extends React.Component {
 
   render() {
     const {
-      sport, value, btnDisabled,
+      name, sport, cricket, football, value, btnDisabled,
     } = this.state;
     const { color, button, myButton } = style;
     const colorStyle = {
@@ -132,7 +131,9 @@ class InputDemo extends React.Component {
       ...button,
       ...myButton,
     };
-    console.log('state', this.state);
+    console.log('state', {
+      name, sport, cricket, football,
+    });
     return (
       <React.Fragment>
         <div>
