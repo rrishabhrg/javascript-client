@@ -141,6 +141,7 @@ class Login extends React.Component {
   handleOnSubmitLogin = async (event) => {
     event.preventDefault();
     const { value } = this.props;
+    console.log('Value-->', value);
     const { email, password } = this.state;
     const data = { email, password };
     const url = 'https://express-training.herokuapp.com/api/user/login';
@@ -152,7 +153,6 @@ class Login extends React.Component {
         localStorage.setItem('token', res.data.data);
         this.setState({
           redirect: true,
-          // loading: true,
         });
       } else {
         value.onOpenSnackbar('Invalid Credentials', 'Retry !!!! ');

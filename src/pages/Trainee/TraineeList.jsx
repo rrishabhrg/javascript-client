@@ -10,7 +10,7 @@ import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { trainees } from './index';
+// import { trainees } from './index';
 import { TableDemo } from '../../components/TableDemo';
 import {
   AddDialog, EditTrainee, DeleteTrainee, schema,
@@ -42,10 +42,8 @@ class TraineeList extends React.Component {
   }
 
   componentDidMount = async () => {
-    const { value } = this.props;
-    const {
-      name, email, list, count,
-    } = this.state;
+    const { value } = this.props; // For Opening SnackBar
+    console.log('Value', value);
     const method = 'get';
     const url = 'https://express-training.herokuapp.com/api/trainee?limit=20&skip=0';
     const data = {};
@@ -54,6 +52,7 @@ class TraineeList extends React.Component {
       this.setState({
         list: res.data.data.records,
       });
+      console.log('Response', res);
       if (res) {
         value.onOpenSnackbar(res.data.message, res.data.status);
       }
